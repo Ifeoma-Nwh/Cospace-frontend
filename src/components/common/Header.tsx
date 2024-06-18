@@ -31,10 +31,7 @@ export default function Header() {
           <Modal label="Log in">
             <LoginForm />
           </Modal>
-          <Modal
-            label="Sign up"
-            className="py-2 ml-4 border-black-base border-2 transition hover:shadow-lb bg-secondary-base text-white-base"
-          >
+          <Modal label="Sign up" className="ml-4 btn-secondary">
             <RegisterForm />
           </Modal>
         </div>

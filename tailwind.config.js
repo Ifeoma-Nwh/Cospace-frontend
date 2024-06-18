@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        headline: ["Neuton", "serif"],
-        text: ["Amiko", "sans-serif"],
+        headline: ["Neuton", "serif"], //700, 800
+        text: ["Amiko", "sans-serif"], // 400, 600, 700
       },
       colors: {
         black: {

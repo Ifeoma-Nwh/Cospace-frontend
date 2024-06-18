@@ -28,7 +28,7 @@ export default function ModalButton({
     <>
       <button
         onClick={openModal}
-        className={`font-text font-semibold px-4 ${className}`}
+        className={`${className} font-text font-semibold`}
       >
         {label}
       </button>

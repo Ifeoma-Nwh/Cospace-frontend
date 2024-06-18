@@ -51,10 +51,30 @@ body {
   a {
     @apply text-sm font-headline font-bold no-underline;
   }
+  label {
+    @apply font-text font-bold leading-6;
+  }
+  input:not([type="radio"]):not([type="checkbox"]),
+  select {
+    @apply border border-black-800 px-3 py-1.5 text-black-base focus:outline-none focus:ring focus:ring-accent-500 focus:border-accent-500 sm:text-sm sm:leading-6 duration-300;
+  }
 }
 
 @layer components {
   .modal {
-    @apply w-1/2 h-fit absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-black-900 shadow-2rb p-4 flex flex-col gap-y-4 items-center;
+    @apply w-1/2 h-fit absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-black-900 shadow-2rb p-4 flex flex-col gap-y-4 items-center;
+  }
+
+  .btn {
+    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb text-black-base;
+  }
+  .btn-primary {
+    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-primary-base text-white-base;
+  }
+  .btn-secondary {
+    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-secondary-base text-white-base;
+  }
+  .btn-accent {
+    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-accent-base text-white-base;
   }
 }
