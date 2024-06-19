@@ -11,5 +11,5 @@ export default interface ICity {
   updatedAt: Date | null;
   createdByUser: User;
   updatedByUser: User | null;
-  coworksByCity: ICowork[];
+  coworksByCity: ICowork[] | null;
 }

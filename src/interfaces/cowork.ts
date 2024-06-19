@@ -21,5 +21,5 @@ export default interface ICowork {
   coworkCity: ICity;
   createdByUser: IUser;
   updatedByUser: IUser | null;
-  coworkTags: ITag[];
+  coworkTags: ITag[] | null;
 }

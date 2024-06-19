@@ -10,5 +10,5 @@ export default interface ITag {
   updatedAt: Date | null;
   createdByUser: IUser;
   updatedByUser: IUser | null;
-  taggedCoworks: ICowork[];
+  taggedCoworks: ICowork[] | null;
 }

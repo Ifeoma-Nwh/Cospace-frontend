@@ -14,10 +14,10 @@ export default interface IUser {
   updatedAt: Date | null;
   role: IRole;
   profile: IProfile;
-  createdCities: ICity[];
-  updatedCities: ICity[];
-  createdCoworks: ICowork[];
-  updatedCoworks: ICowork[];
-  createdTags: ITag[];
-  updatedTags: ITag[];
+  createdCities: ICity[] | null;
+  updatedCities: ICity[] | null;
+  createdCoworks: ICowork[] | null;
+  updatedCoworks: ICowork[] | null;
+  createdTags: ITag[] | null;
+  updatedTags: ITag[] | null;
 }
