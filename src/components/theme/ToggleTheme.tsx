@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { DarkModeContext } from "../../contexts/DarkModeProvider";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 import IconSunny from "~icons/material-symbols/sunny-rounded";
 import IconSunnyOutline from "~icons/material-symbols/sunny-outline-rounded";
 
-export default function ToggleMode() {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+export default function ToggleTheme() {
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   console.log(darkMode);
   return (
     <span

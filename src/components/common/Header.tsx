@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ToggleMode from "../theme/ToggleMode";
+import ToggleTheme from "../theme/ToggleTheme";
 import Modal from "./modal/Modal";
 import LoginForm from "../auth/LoginForm";
 import RegisterForm from "../auth/RegisterForm";
@@ -24,7 +24,7 @@ export default function Header() {
           <Link to="/about" className="font-text font-semibold px-4">
             About
           </Link>
-          <ToggleMode />
+          <ToggleTheme />
         </nav>
 
         <div>

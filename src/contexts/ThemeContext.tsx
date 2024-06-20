@@ -1,16 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 
-interface DarkModeContextType {
+interface IThemeContextType {
   darkMode: boolean;
   toggleDarkMode: () => void;
 }
 
-export const DarkModeContext = createContext<DarkModeContextType>({
+export const ThemeContext = createContext<IThemeContextType>({
   darkMode: false,
   toggleDarkMode: () => {},
 });
 
-export default function DarkModeProvider({
+export default function ThemeProvider({
   children,
 }: {
   children: React.ReactNode;
@@ -33,8 +33,8 @@ export default function DarkModeProvider({
   }, [darkMode]);
 
   return (
-    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
       {children}
-    </DarkModeContext.Provider>
+    </ThemeContext.Provider>
   );
 }

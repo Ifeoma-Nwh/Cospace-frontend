@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./assets/css/App.css";
-import CommonLayout from "./components/common/CommonLayout";
+import CommonLayout from "./components/layouts/CommonLayout";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import ErrorPage from "./routes/ErrorPage";
