@@ -6,7 +6,7 @@ export async function getCoworks(): Promise<ICowork[]> {
   return coworks;
 }
 
-export async function getCowork(id: string): Promise<ICowork> {
+export async function getCowork(id: number): Promise<ICowork> {
   const cowork = await api(`/coworks/${id}`, "GET");
   return cowork;
 }

@@ -6,13 +6,13 @@ export async function getUsers(): Promise<IUser[]> {
   return users;
 }
 
-export async function getUser(id: string): Promise<IUser> {
+export async function getUser(id: number): Promise<IUser> {
   const user = await api(`/users/${id}`, "GET");
   return user;
 }
 
 export async function updateUserRole(
-  id: string,
+  id: number,
   roleId: number
 ): Promise<IUser> {
   const user = await api(`/users/${id}`, "PUT", { roleId });
