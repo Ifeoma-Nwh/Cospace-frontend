@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../contexts/ThemeContext";
+import { ThemeContext } from "../../contexts/theme/ThemeContext";
 
 import IconSunny from "~icons/material-symbols/sunny-rounded";
 import IconSunnyOutline from "~icons/material-symbols/sunny-outline-rounded";

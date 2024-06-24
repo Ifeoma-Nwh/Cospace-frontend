@@ -9,7 +9,7 @@ export default function Home() {
         <div className="w-2/5 mt-[70px]">
           {slogan.map((item, key) => (
             <div
-              id={key.toString()}
+              key={key}
               className={`mb-[90px] ${
                 key === 0
                   ? "text-primary-base"
@@ -20,7 +20,7 @@ export default function Home() {
             >
               {item.split("").map((letter, key) => (
                 <span
-                  id={key.toString()}
+                  key={key}
                   className="capitalize text-[200px] font-headline font-extrabold drop-shadow-2lb"
                 >
                   {letter}
