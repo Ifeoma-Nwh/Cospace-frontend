@@ -12,8 +12,11 @@ type InputProps = {
 };
 
 export default function Input(props: InputProps) {
+  const isCheckboxOrRadio = ["checkbox", "radio"].includes(props.type);
+  const flexClass = "flex-col";
+
   return (
-    <div className="flex flex-col gap-1">
+    <div className={`flex ${!isCheckboxOrRadio ? flexClass : ""} gap-1`}>
       <label htmlFor={props.name} className={props.labelClass}>
         {props.label}
       </label>
@@ -26,6 +29,7 @@ export default function Input(props: InputProps) {
         value={props.value}
         onChange={props.onChange}
         className={props.inputClass}
+        checked={isCheckboxOrRadio && Boolean(props.value)}
       />
       {props.error && <p className="text-accent-700">{props.error}</p>}
     </div>
