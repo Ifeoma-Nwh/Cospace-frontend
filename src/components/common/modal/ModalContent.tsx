@@ -6,11 +6,14 @@ interface ModalOverlayProps {
 }
 
 export default function ModalOverlay({ onClose, children }: ModalOverlayProps) {
-  // TODO: fix close modal when clicking outside
+  // TODO: block scrolling
 
   return (
     <>
-      <div className="w-screen h-screen bg-black-500 opacity-50 fixed z-0 top-0 left-0"></div>
+      <div
+        className="w-screen h-screen bg-black-500 opacity-50 fixed z-0 top-0 left-0"
+        onClick={onClose}
+      ></div>
       <div
         role="dialog"
         aria-modal="true"
