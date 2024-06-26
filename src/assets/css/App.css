@@ -69,7 +69,7 @@ body {
     @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-white-base text-black-base;
   }
   .btn-primary {
-    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-primary-base text-white-base;
+    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-primary-base text-black-base;
   }
   .btn-secondary {
     @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-secondary-base text-white-base;

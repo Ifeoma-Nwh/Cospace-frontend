@@ -2,10 +2,15 @@ import MaterialSymbolsTabCloseOutlineRounded from "~icons/material-symbols/tab-c
 
 interface ModalOverlayProps {
   children: React.ReactNode;
+  bgColor?: string;
   onClose: () => void;
 }
 
-export default function ModalOverlay({ onClose, children }: ModalOverlayProps) {
+export default function ModalOverlay({
+  onClose,
+  children,
+  bgColor,
+}: ModalOverlayProps) {
   // TODO: block scrolling
 
   return (
@@ -17,7 +22,7 @@ export default function ModalOverlay({ onClose, children }: ModalOverlayProps) {
       <div
         role="dialog"
         aria-modal="true"
-        className="modal bg-secondary-200 z-10"
+        className={`modal z-10 ${bgColor ? bgColor : "bg-white-base"}`}
       >
         <button className="self-end" onClick={onClose}>
           <MaterialSymbolsTabCloseOutlineRounded width="32px" height="32px" />

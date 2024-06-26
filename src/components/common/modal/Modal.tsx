@@ -4,13 +4,15 @@ import { createPortal } from "react-dom";
 
 interface ModalButtonProps {
   label: string;
-  className?: string;
+  btnClass?: string;
+  modalBgColor?: string;
   children: React.ReactNode;
 }
 
 export default function ModalButton({
   label,
-  className,
+  btnClass,
+  modalBgColor,
   children,
 }: ModalButtonProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -28,14 +30,16 @@ export default function ModalButton({
     <>
       <button
         onClick={openModal}
-        className={`${className} font-text font-semibold`}
+        className={`${btnClass} font-text font-semibold`}
       >
         {label}
       </button>
 
       {isOpen &&
         createPortal(
-          <ModalContent onClose={closeModal}>{children}</ModalContent>,
+          <ModalContent onClose={closeModal} bgColor={modalBgColor}>
+            {children}
+          </ModalContent>,
           document.body
         )}
     </>
