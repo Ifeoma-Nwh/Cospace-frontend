@@ -9,6 +9,7 @@ type InputProps = {
   inputClass?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
+  checked?: boolean;
 };
 
 export default function Input(props: InputProps) {
@@ -29,9 +30,9 @@ export default function Input(props: InputProps) {
         value={props.value}
         onChange={props.onChange}
         className={props.inputClass}
-        checked={isCheckboxOrRadio && Boolean(props.value)}
+        checked={props.checked}
       />
-      {props.error && <p className="text-accent-700">{props.error}</p>}
+      {props.error && <p className="text-accent-500">{props.error}</p>}
     </div>
   );
 }

@@ -28,10 +28,14 @@ export default function Header() {
         </nav>
 
         <div>
-          <Modal label="Log in">
+          <Modal
+            label="Log in"
+            btnClass="mr-4 btn-secondary"
+            modalBgColor="bg-primary-200"
+          >
             <LoginForm />
           </Modal>
-          <Modal label="Sign up" className="ml-4 btn-secondary">
+          <Modal label="Sign up" modalBgColor="bg-secondary-200">
             <RegisterForm />
           </Modal>
         </div>

@@ -3,6 +3,7 @@ type ButtonProps = {
   type: "button" | "submit" | "reset";
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 export default function Button(props: ButtonProps) {
@@ -11,6 +12,7 @@ export default function Button(props: ButtonProps) {
       type={props.type}
       className={props.className}
       onClick={props.onClick}
+      disabled={props.disabled}
     >
       {props.children}
     </button>
