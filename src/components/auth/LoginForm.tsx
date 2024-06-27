@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useLogin } from "../../hooks/useAuth";
 import { IFormError } from "../../interfaces/formError";
 import Button from "../common/Button";
-import Form from "../common/form/Form";
-import Input from "../common/form/Input";
+import Form from "../form/Form";
+import Input from "../form/Input";
 
 export default function LoginForm() {
   const [email, setEmail] = useState<string>("");

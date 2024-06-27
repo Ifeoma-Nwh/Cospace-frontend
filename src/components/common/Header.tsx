@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ToggleTheme from "../theme/ToggleTheme";
-import Modal from "./modal/Modal";
+import Modal from "../modal/Modal";
 import LoginForm from "../auth/LoginForm";
 import RegisterForm from "../auth/RegisterForm";
 

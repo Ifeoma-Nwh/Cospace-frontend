@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../common/Button";
-import Form from "../common/form/Form";
-import Input from "../common/form/Input";
+import Form from "../form/Form";
+import Input from "../form/Input";
 import { useRegister } from "../../hooks/useAuth";
 import { IFormError } from "../../interfaces/formError";
 
