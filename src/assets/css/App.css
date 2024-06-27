@@ -65,6 +65,18 @@ body {
     @apply w-1/2 h-fit absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-black-900 shadow-2rb p-4 flex flex-col gap-y-4 items-center;
   }
 
+  .toasts-container {
+    @apply flex flex-col-reverse gap-y-3 z-50 fixed top-4 right-4;
+  }
+
+  .toast {
+    @apply flex items-center bg-white-base shadow-lb p-4 relative overflow-hidden w-80;
+  }
+
+  .toast-message {
+    @apply ml-3 text-black-base text-sm font-text font-semibold;
+  }
+
   .btn {
     @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-white-base text-black-base;
   }
