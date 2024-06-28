@@ -22,26 +22,26 @@
 @layer base {
   :root {
     --text-base: #2e2e2e;
-    --text-100: #e6e6e6;
-    --text-200: #cccccc;
-    --text-300: #b3b3b3;
-    --text-400: #999999;
-    --text-500: #808080;
-    --text-600: #666666;
-    --text-700: #4d4d4d;
-    --text-800: #333333;
-    --text-900: #1a1a1a;
+    --text-100: #f6f6f6;
+    --text-200: #e7e7e7;
+    --text-300: #d1d1d1;
+    --text-400: #b0b0b0;
+    --text-500: #888888;
+    --text-600: #6d6d6d;
+    --text-700: #4f4f4f;
+    --text-800: #454545;
+    --text-900: #3d3d3d;
 
     --background-base: #fff;
-    --background-100: #e6e6e6;
-    --background-200: #cccccc;
-    --background-300: #b3b3b3;
-    --background-400: #999999;
-    --background-500: #808080;
-    --background-600: #666666;
-    --background-700: #4d4d4d;
-    --background-800: #333333;
-    --background-900: #1a1a1a;
+    --background-100: #efefef;
+    --background-200: #dcdcdc;
+    --background-300: #bdbdbd;
+    --background-400: #989898;
+    --background-500: #7c7c7c;
+    --background-600: #656565;
+    --background-700: #525252;
+    --background-800: #464646;
+    --background-900: #3d3d3d;
 
     --primary-base: #e9d858;
     --primary-100: #f9f5d2;
@@ -79,27 +79,27 @@
     --shadow-base: #080808;
   }
   .dark {
-    --text-base: #d1d1d1;
-    --text-100: #1a1a1a;
-    --text-200: #333333;
-    --text-300: #4d4d4d;
-    --text-400: #666666;
-    --text-500: #808080;
-    --text-600: #999999;
-    --text-700: #b3b3b3;
-    --text-800: #cccccc;
-    --text-900: #e6e6e6;
+    --text-base: #f9f9f9;
+    --text-100: #3d3d3d;
+    --text-200: #464646;
+    --text-300: #525252;
+    --text-400: #656565;
+    --text-500: #7c7c7c;
+    --text-600: #989898;
+    --text-700: #bdbdbd;
+    --text-800: #dcdcdc;
+    --text-900: #efefef;
 
     --background-base: #080808;
-    --background-100: #1a1a1a;
-    --background-200: #333333;
-    --background-300: #4d4d4d;
-    --background-400: #666666;
-    --background-500: #808080;
-    --background-600: #999999;
-    --background-700: #b3b3b3;
-    --background-800: #cccccc;
-    --background-900: #e6e6e6;
+    --background-100: #3d3d3d;
+    --background-200: #454545;
+    --background-300: #4f4f4f;
+    --background-400: #6d6d6d;
+    --background-500: #888888;
+    --background-600: #b0b0b0;
+    --background-700: #d1d1d1;
+    --background-800: #e7e7e7;
+    --background-900: #f6f6f6;
 
     --primary-base: #a79616;
     --primary-100: #2d2906;

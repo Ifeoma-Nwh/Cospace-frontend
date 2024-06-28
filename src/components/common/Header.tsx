@@ -7,7 +7,7 @@ import RegisterForm from "../auth/RegisterForm";
 export default function Header() {
   return (
     <header>
-      <div className="container mx-auto h-1/5 mb-8 py-6 flex justify-evenly items-center">
+      <div className="container mx-auto h-1/5 mb-8 py-6 flex justify-between items-center">
         <div>
           <Link to="/" className="font-headline text-2xl uppercase">
             Co'Space

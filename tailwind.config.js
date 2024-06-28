@@ -121,6 +121,25 @@ export default {
         "4lb": "-20px 20px 0px var(--shadow-base)",
         "5lb": "-25px 25px 0px var(--shadow-base)",
       },
+      animation: {
+        "progress-bar": "progress-bar 4s linear forwards",
+        "slide-in": "slide-in 0.4s ease-in-out forwards",
+        "slide-out": "slide-out 0.4s ease-in-out forwards",
+      },
+      keyframes: {
+        "progress-bar": {
+          "0%": { width: "100%" },
+          "100%": { width: "0%" },
+        },
+        "slide-in": {
+          "0%": { opacity: 0, transform: "translateX(100%)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+        "slide-out": {
+          "0%": { opacity: 1, transform: "translateX(0)" },
+          "100%": { opacity: 0, transform: "translateX(100%)" },
+        },
+      },
     },
   },
   plugins: [],

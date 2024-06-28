@@ -3,9 +3,15 @@ import { toastReducer } from "../../reducers/toastReducer";
 import { initialState } from "./toastConstants";
 import ToastsContainer from "../../components/toast/ToastsContainer";
 
-export const ToastContext = createContext({});
+type ToastContextValue = {
+  success: (message: string) => void;
+  error: (message: string) => void;
+  remove: (id: number) => void;
+};
 
-export function ToastContextProvider({
+export const ToastContext = createContext<ToastContextValue | null>(null);
+
+export function ToastProvider({
   children,
 }: {
   children: React.ReactNode;
