@@ -1,25 +1,46 @@
-import { createContext } from "react";
-import { useGetMe } from "../../hooks/useAuth";
+import { createContext, useReducer } from "react";
 import IUser from "../../interfaces/user";
 
-export const AuthContext = createContext<IUser | null>(null);
+type State = {
+  authUser: IUser | null;
+};
+
+type Action = {
+  type: string;
+  payload: IUser | null;
+};
+
+type Dispatch = (action: Action) => void;
+
+const initialState: State = {
+  authUser: null,
+};
+
+export const AuthContext = createContext<
+  { state: State; dispatch: Dispatch } | null | undefined
+>(null);
+
+const authReducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case "SET_USER": {
+      return {
+        ...state,
+        authUser: action.payload,
+      };
+    }
+    default: {
+      throw new Error(`Unhandled action type`);
+    }
+  }
+};
 
 export default function AuthProvider({
   children,
 }: {
   children: React.ReactNode;
 }): React.JSX.Element {
-  const { data: authUser = null, isLoading, error } = useGetMe();
+  const [state, dispatch] = useReducer(authReducer, initialState);
+  const value = { state, dispatch };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error.message}</div>;
-  }
-
-  return (
-    <AuthContext.Provider value={authUser}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

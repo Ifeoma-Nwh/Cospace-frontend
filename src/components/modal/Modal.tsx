@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalContent from "./ModalContent";
+import ModalOverlay from "./ModalOverlay";
 import { createPortal } from "react-dom";
 
 interface ModalButtonProps {
@@ -18,7 +18,6 @@ export default function ModalButton({
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const openModal = () => {
-    console.log("isOpen : ", isOpen);
     setIsOpen(true);
   };
 
@@ -37,9 +36,9 @@ export default function ModalButton({
 
       {isOpen &&
         createPortal(
-          <ModalContent onClose={closeModal} bgColor={modalBgColor}>
+          <ModalOverlay onClose={closeModal} bgColor={modalBgColor}>
             {children}
-          </ModalContent>,
+          </ModalOverlay>,
           document.body
         )}
     </>

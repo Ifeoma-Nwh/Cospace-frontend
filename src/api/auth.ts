@@ -26,7 +26,7 @@ export async function logout(): Promise<ILogoutResponse> {
 }
 
 export async function getMe(): Promise<IUser | null> {
-  const authUser = await api("/auth/me", "GET");
-  console.log("🚀 ~ getMe ~ authUser:", authUser);
-  return authUser;
+  const authData = await api("/auth/me", "GET");
+  console.log("🚀 ~ getMe ~ authData:", authData);
+  return authData?.authUser || null;
 }

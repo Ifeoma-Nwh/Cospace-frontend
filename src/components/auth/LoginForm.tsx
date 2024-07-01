@@ -1,36 +1,46 @@
 import { useState } from "react";
-import { useLogin } from "../../hooks/useAuth";
-import { IFormError } from "../../interfaces/formError";
+import { useGetMe, useLogin } from "../../hooks/useAuth";
 import Button from "../common/Button";
 import Form from "../form/Form";
 import Input from "../form/Input";
+import useToast from "../../contexts/toast/useToast";
+import useAuthContext from "../../contexts/auth/useAuthContext";
 
 export default function LoginForm() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [errors, setErrors] = useState<IFormError[]>();
+
+  const authContext = useAuthContext();
 
   const mutation = useLogin();
+  const toast = useToast();
+
+  const query = useGetMe();
 
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    mutation.mutate(
+    mutation.mutateAsync(
       { email, password },
       {
         onSuccess: () => {
           setEmail("");
           setPassword("");
-          setErrors([]);
+          toast?.success("Connexion réussie !");
         },
         onError: (error) => {
           if (Array.isArray(error)) {
-            setErrors(error);
+            toast?.error(error[0].message);
           }
-          console.log(errors);
         },
       }
     );
   };
+
+  if (query.isSuccess && query.data) {
+    console.log(query.data);
+    authContext?.dispatch({ type: "SET_USER", payload: query.data });
+  }
+
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-3 lg:px-8">
       <h3 className="text-center">Déjà inscrit ? Connecte toi</h3>
@@ -43,7 +53,6 @@ export default function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            error={errors?.find((error) => error.field === "email")?.message}
           />
           <Input
             label="Mot de passe"
@@ -52,7 +61,6 @@ export default function LoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            error={errors?.find((error) => error.field === "password")?.message}
           />
           <Button
             type="submit"

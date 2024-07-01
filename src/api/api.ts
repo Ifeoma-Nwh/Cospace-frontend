@@ -1,8 +1,9 @@
 const URL_API = "http://localhost:3333/api";
 
-const token = localStorage.getItem("token");
-
 export default async function api(url: string, method: string, body = {}) {
+  const token = localStorage.getItem("token");
+  console.log("🚀 ~ token:", token);
+
   const response = await fetch(`${URL_API}${url}`, {
     credentials: "include",
     method,

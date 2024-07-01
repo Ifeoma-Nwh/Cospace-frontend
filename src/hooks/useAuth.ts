@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { getMe, login, logout, register } from "../api/auth";
 
 export const useRegister = () => {
@@ -21,12 +21,10 @@ export const useLogin = () => {
 };
 
 export const useLogout = () => {
-  const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: () => logout(),
+    mutationFn: async () => await logout(),
     onSuccess: () => {
       localStorage.removeItem("token");
-      queryClient.setQueryData(["authUser"], null);
     },
   });
 };
@@ -35,6 +33,7 @@ export const useGetMe = () => {
   return useQuery({
     queryKey: ["authUser"],
     queryFn: () => getMe(),
+    retry: 1,
     staleTime: Infinity,
     enabled: !!localStorage.getItem("token"),
   });

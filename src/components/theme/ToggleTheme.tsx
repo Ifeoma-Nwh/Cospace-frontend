@@ -6,7 +6,6 @@ import IconSunnyOutline from "~icons/material-symbols/sunny-outline-rounded";
 
 export default function ToggleTheme() {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
-  console.log(darkMode);
   return (
     <span
       className="px-5 cursor-pointer"
