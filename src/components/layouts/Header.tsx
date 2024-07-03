@@ -5,6 +5,7 @@ import LoginForm from "../auth/LoginForm";
 import RegisterForm from "../auth/RegisterForm";
 import useAuthContext from "../../contexts/auth/useAuthContext";
 import Logout from "../auth/Logout";
+import NavBar from "../menu/NavBar";
 
 export default function Header() {
   const authContext = useAuthContext();
@@ -12,25 +13,14 @@ export default function Header() {
 
   return (
     <header>
-      <div className="container mx-auto h-1/5 mb-8 py-6 flex justify-between items-center">
+      <div className="container mx-auto h-1/5 mb-8 py-6 flex gap-x-8 justify-between items-center">
         <div>
           <Link to="/" className="font-headline text-2xl uppercase">
             Co'Space
           </Link>
         </div>
-
-        <nav className="flex">
-          <Link to="/" className="font-text font-semibold px-4">
-            Villes
-          </Link>
-          <Link to="/" className="font-text font-semibold px-4">
-            Coworks
-          </Link>
-          <Link to="/about" className="font-text font-semibold px-4">
-            About
-          </Link>
-          <ToggleTheme />
-        </nav>
+        <NavBar />
+        <ToggleTheme />
 
         {authUser && (
           <div className="flex gap-x-4 justify-between">
