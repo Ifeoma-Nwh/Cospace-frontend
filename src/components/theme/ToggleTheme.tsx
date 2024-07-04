@@ -8,7 +8,7 @@ export default function ToggleTheme() {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   return (
     <span
-      className="px-5 cursor-pointer"
+      className="cursor-pointer"
       onClick={() => {
         toggleDarkMode();
       }}
