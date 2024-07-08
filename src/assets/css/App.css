@@ -70,7 +70,7 @@ body {
   }
 
   .toast {
-    @apply flex items-center bg-white-base border border-black-base shadow-lb p-4 relative overflow-hidden w-80;
+    @apply flex items-center bg-white-base border rounded border-black-base shadow-lb p-4 relative overflow-hidden w-80;
   }
 
   .toast-open {
@@ -94,19 +94,23 @@ body {
   }
 
   .dropdown {
-    @apply absolute z-10 border bg-white-base shadow-rb top-8 right-auto min-w-80 h-60 px-3 py-2 flex flex-col gap-1 flex-wrap;
+    @apply border rounded border-black-base bg-white-base shadow-rb w-[50rem] h-60 px-7 py-5 flex flex-col gap-1 flex-wrap;
+  }
+
+  .dropdown-item {
+    @apply text-2xl font-headline font-bold mb-3;
   }
 
   .btn {
-    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-white-base text-black-base;
+    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded shadow-rb bg-white-base text-black-base -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-primary-300 hover:translate-x-0 hover:translate-y-0;
   }
   .btn-primary {
-    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-primary-base text-black-base;
+    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded shadow-rb bg-primary-base text-black-base -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-primary-300 hover:translate-x-0 hover:translate-y-0;
   }
   .btn-secondary {
-    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-secondary-base text-white-base;
+    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded shadow-rb bg-secondary-400 text-black-base -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-secondary-300 hover:translate-x-0 hover:translate-y-0;
   }
   .btn-accent {
-    @apply px-4 py-2 border-black-base border-2 transition hover:shadow-lb bg-accent-base text-white-base;
+    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded bg-accent-base text-black-base shadow-rb -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-secondary-300 hover:translate-x-0 hover:translate-y-0;
   }
 }

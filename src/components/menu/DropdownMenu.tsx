@@ -1,4 +1,5 @@
 import { UseQueryResult } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 type Props<T> = {
   dropdownClass?: string;
@@ -17,14 +18,18 @@ export default function DropdownMenu<T extends { id: number; name: string }>({
   }
 
   return (
-    <div className={dropdownClass}>
-      <ul className="dropdown">
-        {listQuery?.data.map((item) => (
-          <li className="dropdown-item" key={item.id}>
-            {item.name}
-          </li>
-        ))}
-      </ul>
+    <div className={`absolute z-10 top-16 left-auto ${dropdownClass}`}>
+      <div className="mt-12">
+        <ul className="dropdown">
+          {listQuery?.data.map((item) => (
+            <li key={item.id}>
+              <Link to={`/city/${item.id}`} className="dropdown-item">
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
