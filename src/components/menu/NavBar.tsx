@@ -27,14 +27,15 @@ export default function NavBar({ classes }: Props) {
   return (
     <nav className={`w-2/5 ${classes}`}>
       <ul className="flex gap-x-8 justify-between items-center">
-        {menuItemsData.map((menu, index) =>
+        {menuItemsData.map((menu, key) =>
           menu.name === "Cities" ? (
             <div
+              key={key}
               className="cursor-pointer"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <li key={index} className="flex relative">
+              <li key={key} className="flex relative">
                 <span className="font-text font-semibold text-lg">
                   {menu.name}
                 </span>
@@ -45,13 +46,12 @@ export default function NavBar({ classes }: Props) {
                 )}
               </li>
               <DropdownMenu<ICity>
-                key={`dropdown${index}`}
                 listQuery={citiesQuery}
                 dropdownClass={isHovered ? "block" : "hidden"}
               />
             </div>
           ) : (
-            <li key={index}>
+            <li key={key}>
               <Link to={menu.path} className="font-text font-semibold text-lg">
                 {menu.name}
               </Link>

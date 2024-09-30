@@ -12,7 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<CommonLayout />}>
           <Route index element={<Home />} />
-          <Route path="city/:id" element={<City />} />
+          <Route path="cities/:city_id" element={<City />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>

@@ -1,15 +1,15 @@
 import { UseQueryResult } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import ICowork from "../../interfaces/cowork";
 
 type Props<T> = {
   dropdownClass?: string;
   listQuery?: UseQueryResult<T[], Error>;
 };
 
-export default function DropdownMenu<T extends { id: number; name: string }>({
-  dropdownClass,
-  listQuery,
-}: Props<T>) {
+export default function DropdownMenu<
+  T extends { id: number; name: string; coworksByCity: ICowork[] | null }
+>({ dropdownClass, listQuery }: Props<T>) {
   if (listQuery?.isPending) {
     return <div>Loading...</div>;
   }
@@ -23,8 +23,9 @@ export default function DropdownMenu<T extends { id: number; name: string }>({
         <ul className="dropdown">
           {listQuery?.data.map((item) => (
             <li key={item.id}>
-              <Link to={`/city/${item.id}`} className="dropdown-item">
+              <Link to={`/cities/${item.id}`} className="dropdown-item">
                 {item.name}
+                {item.coworksByCity && ` (${item.coworksByCity.length})`}
               </Link>
             </li>
           ))}

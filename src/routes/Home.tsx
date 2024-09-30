@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <>
       <section className="h-[70vh] flex justify-between">
-        <div className="w-2/5 mt-[70px]">
+        <div className="w-2/4">
           {slogan.map((item, key) => (
             <div
               key={key}
-              className={`mb-[90px] ${
+              className={`${
                 key === 0
                   ? "text-primary-base"
                   : key === 1
@@ -24,16 +24,22 @@ export default function Home() {
               {item.split("").map((letter, key) => (
                 <span
                   key={key}
-                  className="capitalize text-[200px] font-headline font-extrabold drop-shadow-2lb"
+                  className="capitalize text-9xl font-headline font-extrabold drop-shadow-2lb"
                 >
                   {letter}
                 </span>
               ))}
             </div>
           ))}
+          <div>
+            <p className="text-3xl font-headline font-bold">
+              Finding workspace has never been easier !
+            </p>
+          </div>
         </div>
-        <div className="w-3/5 border-2 border-white-base shadow-3rb">
-          <img src={HomeImg} alt="Home image" />
+        {/* TODO: rounded image*/}
+        <div className="w-2/4">
+          <img src={HomeImg} alt="home-image" className="rounded-xl" />
         </div>
       </section>
       <section>

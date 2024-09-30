@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useGetCity } from "../hooks/useCity";
+import CoworkCard from "../components/coworks/CoworkCard";
 
 export default function City() {
-  const { id } = useParams();
-  const idCity = Number(id);
+  const { city_id } = useParams();
+  const idCity = Number(city_id);
   const { data: city, isError, isFetching } = useGetCity(idCity);
 
   if (isError) {
@@ -13,5 +14,15 @@ export default function City() {
     return <div>Loading...</div>;
   }
 
-  return <div>{city?.name}</div>;
+  return (
+    <div>
+      <h1>{city?.name}</h1>
+      <p>{city?.zipcode}</p>
+      <div>
+        {city?.coworksByCity?.map((cowork) => (
+          <CoworkCard key={cowork.id} cowork={cowork} />
+        ))}
+      </div>
+    </div>
+  );
 }
