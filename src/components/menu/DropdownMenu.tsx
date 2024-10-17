@@ -18,7 +18,7 @@ export default function DropdownMenu<
   }
 
   return (
-    <div className={`absolute z-10 top-16 left-auto ${dropdownClass}`}>
+    <div className={`absolute z-10 top-9 left-auto ${dropdownClass}`}>
       <div className="mt-12">
         <ul className="dropdown">
           {listQuery?.data.map((item) => (

@@ -40,8 +40,8 @@ export default function Header() {
   };
 
   return (
-    <header className="pt-3">
-      <div className="container mx-3 md:mx-auto h-1/5 mb-8 py-4 px-8 border border-black-base rounded shadow-rb flex gap-x-8 justify-between items-center">
+    <header className="fixed z-10 top-0 w-full border-b-2 border-black-base bg-accent-200">
+      <div className="container md:mx-auto py-4 px-8 flex gap-x-8 justify-between items-center">
         <div>
           <Link to="/" className="font-headline text-2xl uppercase">
             Co'Space

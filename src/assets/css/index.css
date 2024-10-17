@@ -21,7 +21,7 @@
 
 @layer base {
   :root {
-    --text-base: #2e2e2e;
+    --text-base: #131210;
     --text-100: #f6f6f6;
     --text-200: #e7e7e7;
     --text-300: #d1d1d1;
@@ -76,10 +76,10 @@
     --accent-800: #661f00;
     --accent-900: #330f00;
 
-    --shadow-base: #080808;
+    --shadow-base: #131210;
   }
   .dark {
-    --text-base: #f9f9f9;
+    --text-base: #eeecdd;
     --text-100: #3d3d3d;
     --text-200: #464646;
     --text-300: #525252;
@@ -90,7 +90,7 @@
     --text-800: #dcdcdc;
     --text-900: #efefef;
 
-    --background-base: #080808;
+    --background-base: #131210;
     --background-100: #3d3d3d;
     --background-200: #454545;
     --background-300: #4f4f4f;
@@ -134,6 +134,6 @@
     --accent-800: #ffb899;
     --accent-900: #ffdbcc;
 
-    --shadow-base: #f9f9f9;
+    --shadow-base: #eeecdd;
   }
 }
