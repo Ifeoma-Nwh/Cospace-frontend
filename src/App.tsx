@@ -8,7 +8,7 @@ import City from "./routes/City";
 
 export default function App() {
   return (
-    <div className="w-screen min-h-screen bg-white-base">
+    <div className="w-screen min-h-screen bg-clr-white">
       <Routes>
         <Route path="/" element={<CommonLayout />}>
           <Route index element={<Home />} />

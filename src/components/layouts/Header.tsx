@@ -40,7 +40,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed z-10 top-0 w-full border-b-2 border-black-base bg-accent-200">
+    <header className="fixed z-10 top-0 w-full border-b-2 border-clr-black bg-clr-white">
       <div className="container md:mx-auto py-4 px-8 flex gap-x-8 justify-between items-center">
         <div>
           <Link to="/" className="font-headline text-2xl uppercase">

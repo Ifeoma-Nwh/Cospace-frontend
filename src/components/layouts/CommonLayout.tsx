@@ -6,7 +6,7 @@ export default function CommonLayout() {
   return (
     <>
       <Header />
-      <main className="pt-32 container mx-auto">
+      <main className="pt-20">
         <Outlet />
       </main>
       <Footer />

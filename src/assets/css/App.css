@@ -4,7 +4,7 @@
 
 /* General */
 body {
-  color: var(--text-base);
+  color: var(--text);
 }
 
 @layer base {
@@ -56,13 +56,13 @@ body {
   }
   input:not([type="radio"]):not([type="checkbox"]),
   select {
-    @apply border border-black-800 px-3 py-1.5 text-black-base focus:outline-none focus:ring focus:ring-accent-500 focus:border-accent-500 sm:text-sm sm:leading-6 duration-300;
+    @apply border border-clr-black px-3 py-1.5 text-clr-white focus:outline-none focus:ring focus:ring-clr-primary focus:border-clr-primary sm:text-sm sm:leading-6 duration-300;
   }
 }
 
 @layer components {
   .modal {
-    @apply w-1/2 h-fit absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-black-900 shadow-2rb p-4 flex flex-col gap-y-4 items-center;
+    @apply w-1/2 h-fit absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-clr-black shadow-2rb p-4 flex flex-col gap-y-4 items-center;
   }
 
   .toasts-container {
@@ -70,7 +70,7 @@ body {
   }
 
   .toast {
-    @apply flex items-center bg-white-base border rounded border-black-base shadow-lb p-4 relative overflow-hidden w-80;
+    @apply flex items-center bg-clr-white border rounded border-clr-black shadow-lb p-4 relative overflow-hidden w-80;
   }
 
   .toast-open {
@@ -82,11 +82,11 @@ body {
   }
 
   .toast-message {
-    @apply ml-3 text-black-base text-sm font-text font-semibold;
+    @apply ml-3 text-clr-black text-sm font-text font-semibold;
   }
 
   .toast-progress {
-    @apply absolute bottom-0 left-0 w-full h-1 bg-black-200;
+    @apply absolute bottom-0 left-0 w-full h-1 bg-clr-grey;
   }
 
   .toast-progress-bar {
@@ -94,7 +94,7 @@ body {
   }
 
   .dropdown {
-    @apply border rounded border-black-base bg-white-base shadow-rb w-[50rem] h-60 px-7 py-5 flex flex-col gap-1 flex-wrap;
+    @apply border rounded border-clr-black bg-clr-white shadow-rb w-[50rem] h-60 px-7 py-5 flex flex-col gap-1 flex-wrap;
   }
 
   .dropdown-item {
@@ -102,15 +102,12 @@ body {
   }
 
   .btn {
-    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded shadow-rb bg-white-base text-black-base -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-primary-300 hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-white text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
   }
   .btn-primary {
-    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded shadow-rb bg-primary-base text-black-base -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-primary-300 hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-primary text-clr-white -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
   }
   .btn-secondary {
-    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded shadow-rb bg-secondary-400 text-black-base -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-secondary-300 hover:translate-x-0 hover:translate-y-0;
-  }
-  .btn-accent {
-    @apply px-4 py-2 min-w-32 border-black-base border-2 rounded bg-accent-base text-black-base shadow-rb -translate-x-1 -translate-y-1 transition hover:shadow-none hover:bg-secondary-300 hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-secondary text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
   }
 }

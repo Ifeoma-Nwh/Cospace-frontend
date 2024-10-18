@@ -13,13 +13,13 @@ type Toast = {
 const toastTypes = {
   success: {
     icon: (
-      <MaterialSymbolsCheckCircleOutlineRounded style={{ color: "#44bbbb" }} />
+      <MaterialSymbolsCheckCircleOutlineRounded style={{ color: "#3cd39e" }} />
     ),
-    progressBarClass: "bg-secondary-500",
+    progressBarClass: "bg-clr-success",
   },
   error: {
-    icon: <MaterialSymbolsErrorOutlineRounded style={{ color: "#ff4d00" }} />,
-    progressBarClass: "bg-accent-500",
+    icon: <MaterialSymbolsErrorOutlineRounded style={{ color: "#ff5252" }} />,
+    progressBarClass: "bg-clr-alert",
   },
 };
 

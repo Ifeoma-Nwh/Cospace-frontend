@@ -32,7 +32,7 @@ export default function Input(props: InputProps) {
         className={props.inputClass}
         checked={props.checked}
       />
-      {props.error && <p className="text-accent-500">{props.error}</p>}
+      {props.error && <p className="text-clr-alert">{props.error}</p>}
     </div>
   );
 }

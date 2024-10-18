@@ -12,13 +12,13 @@ export default function AuthBar({ authUser }: Props) {
   if (!authUser) {
     return (
       <div className="flex justify-center gap-x-6 mt-1 w-1/4">
-        <Modal label="Sign up" btnClass="btn" modalBgColor="bg-secondary-200">
+        <Modal label="Sign up" btnClass="btn" modalBgColor="bg-clr-white">
           <RegisterForm />
         </Modal>
         <Modal
           label="Log in"
           btnClass="btn-secondary"
-          modalBgColor="bg-primary-200"
+          modalBgColor="bg-clr-white"
         >
           <LoginForm />
         </Modal>
