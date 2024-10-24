@@ -1,8 +1,4 @@
-import useToast from "../contexts/toast/useToast";
-
 export default function Home() {
-  const toast = useToast();
-
   return (
     <>
       <section className="min-h-[95vh] flex justify-between bg-clr-secondary border-b-2 border-clr-black">
@@ -24,19 +20,16 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="pt-10">
-        <button
-          className="btn-primary"
-          onClick={() => toast && toast.success("Success toast notification.")}
-        >
-          Success
-        </button>
-        <button
-          className="btn-secondary"
-          onClick={() => toast && toast.error("Error toast notification")}
-        >
-          Error
-        </button>
+      <section className="pt-10 container mx-auto">
+        <h1 className="text-6xl mb-6">
+          Accessible coworking spaces around you
+        </h1>
+        <p className="max-w-3xl">
+          Choose from a wide range of coworking spaces, all designed to suit
+          your needs. Whether you are looking for a private office, a shared
+          workspace or just a spot to plug in your laptop, we've got you
+          covered.
+        </p>
       </section>
     </>
   );

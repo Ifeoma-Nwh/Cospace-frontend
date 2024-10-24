@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ToggleTheme from "../theme/ToggleTheme";
 import useAuthContext from "../../contexts/auth/useAuthContext";
 import NavBar from "../menu/NavBar";
 import AuthBar from "../auth/AuthBar";
@@ -50,7 +49,6 @@ export default function Header() {
         {onMobile ? (
           <>
             <div className="flex items-center gap-x-4">
-              <ToggleTheme />
               <button onClick={toggleMenu}>
                 {menuOpen ? (
                   <MaterialSymbolsCloseRounded />
@@ -65,7 +63,6 @@ export default function Header() {
         ) : (
           <>
             <NavBar />
-            <ToggleTheme />
             <AuthBar authUser={authUser} />
           </>
         )}

@@ -6,7 +6,7 @@ export default function CommonLayout() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="pt-16">
         <Outlet />
       </main>
       <Footer />

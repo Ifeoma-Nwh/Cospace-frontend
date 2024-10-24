@@ -19,7 +19,7 @@ body {
   /* Neuton : bold, extrabold */
 
   h1 {
-    @apply text-4xl font-headline font-extrabold;
+    @apply text-4xl font-headline font-bold;
   }
 
   h2 {
@@ -56,7 +56,7 @@ body {
   }
   input:not([type="radio"]):not([type="checkbox"]),
   select {
-    @apply border border-clr-black px-3 py-1.5 text-clr-white focus:outline-none focus:ring focus:ring-clr-primary focus:border-clr-primary sm:text-sm sm:leading-6 duration-300;
+    @apply border border-clr-black px-3 py-1.5 text-clr-black focus:outline-none focus:ring focus:ring-clr-primary focus:border-clr-primary sm:text-sm sm:leading-6 duration-300;
   }
 }
 

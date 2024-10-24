@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetMe, useLogin } from "../../hooks/useAuth";
 import Button from "../common/Button";
 import Form from "../form/Form";
@@ -7,8 +7,8 @@ import useToast from "../../contexts/toast/useToast";
 import useAuthContext from "../../contexts/auth/useAuthContext";
 
 export default function LoginForm() {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [inputEmail, setInputEmail] = useState<string>("");
+  const [inputPassword, setInputPassword] = useState<string>("");
 
   const authContext = useAuthContext();
 
@@ -20,11 +20,11 @@ export default function LoginForm() {
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     mutation.mutateAsync(
-      { email, password },
+      { email: inputEmail, password: inputPassword },
       {
         onSuccess: () => {
-          setEmail("");
-          setPassword("");
+          setInputEmail("");
+          setInputPassword("");
           toast?.success("Connexion réussie !");
         },
         onError: (error) => {
@@ -36,10 +36,13 @@ export default function LoginForm() {
     );
   };
 
-  if (query.isSuccess && query.data) {
-    console.log(query.data);
-    authContext?.dispatch({ type: "SET_USER", payload: query.data });
-  }
+  // Move the dispatch to useEffect to avoid the issue
+  useEffect(() => {
+    if (query.isSuccess && query.data) {
+      console.log(query.data);
+      authContext?.dispatch({ type: "SET_USER", payload: query.data });
+    }
+  }, [query.isSuccess, query.data, authContext]); // Run this effect when query.isSuccess or query.data changes
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-3 lg:px-8">
@@ -50,16 +53,16 @@ export default function LoginForm() {
             label="Email"
             name="email"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={inputEmail}
+            onChange={(e) => setInputEmail(e.target.value)}
             required
           />
           <Input
             label="Mot de passe"
             type="password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={inputPassword}
+            onChange={(e) => setInputPassword(e.target.value)}
             required
           />
           <Button

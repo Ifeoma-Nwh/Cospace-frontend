@@ -1,4 +1,5 @@
 import IUser from "../../interfaces/user";
+import Avatar from "../account/avatar";
 import Modal from "../modal/Modal";
 import LoginForm from "./LoginForm";
 import Logout from "./Logout";
@@ -9,6 +10,8 @@ type Props = {
 };
 
 export default function AuthBar({ authUser }: Props) {
+  console.log("🚀 ~ AuthBar ~ authUser:", authUser);
+
   if (!authUser) {
     return (
       <div className="flex justify-center gap-x-6 mt-1 w-1/4">
@@ -26,8 +29,8 @@ export default function AuthBar({ authUser }: Props) {
     );
   }
   return (
-    <div className="flex gap-x-4 justify-between">
-      <div>{authUser?.fullName}</div>
+    <div className="flex gap-x-4 justify-between items-center">
+      <Avatar avatarUrl={authUser.avatarUrl} />
       <Logout />
     </div>
   );
