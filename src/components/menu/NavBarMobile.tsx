@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { menuItemsData } from "./menuItemsData";
+import { dropdownMenu } from "../../data/DropdownMenu";
 import { useGetCities } from "../../hooks/useCity";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ export default function NavBarMobile() {
   return (
     <nav className="w-full">
       <ul>
-        {menuItemsData.map((menu, key) =>
+        {dropdownMenu.map((menu, key) =>
           menu.name === "Cities" ? (
             <li key={key} onClick={handleToggle}>
               <div>

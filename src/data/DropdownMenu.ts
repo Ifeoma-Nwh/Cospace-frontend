@@ -1,4 +1,4 @@
-export const menuItemsData = [
+export const dropdownMenu = [
   {
     name: "Cities",
     path: "/",

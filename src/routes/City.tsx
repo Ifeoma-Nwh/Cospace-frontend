@@ -15,7 +15,7 @@ export default function City() {
   }
 
   return (
-    <div>
+    <div className="p-8">
       <h1>{city?.name}</h1>
       <p>{city?.zipcode}</p>
       <div>

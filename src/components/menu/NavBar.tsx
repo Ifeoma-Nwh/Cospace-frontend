@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { menuItemsData } from "./menuItemsData";
+import { dropdownMenu } from "../../data/DropdownMenu";
 import { useGetCities } from "../../hooks/useCity";
 import DropdownMenu from "./DropdownMenu";
 import ICity from "../../interfaces/city";
@@ -27,7 +27,7 @@ export default function NavBar({ classes }: Props) {
   return (
     <nav className={`w-2/5 ${classes}`}>
       <ul className="flex gap-x-8 justify-between items-center">
-        {menuItemsData.map((menu, key) =>
+        {dropdownMenu.map((menu, key) =>
           menu.name === "Cities" ? (
             <div
               key={key}
