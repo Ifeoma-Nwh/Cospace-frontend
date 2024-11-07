@@ -114,4 +114,22 @@ body {
   .card {
     @apply max-w-52 bg-clr-white border-2 border-clr-black rounded-md shadow-rb;
   }
+
+  .pagination-container {
+    @apply flex list-none;
+  }
+  .pagination-item {
+    @apply mx-auto my-1 px-3 h-8 min-w-8 flex items-center rounded-full text-clr-black text-sm text-center hover:cursor-pointer hover:border hover:border-clr-black;
+  }
+  .pagination-item.dots {
+    @apply hover:bg-transparent hover:cursor-default;
+  }
+
+  .pagination-item.active {
+    @apply bg-clr-primary;
+  }
+
+  .pagination-item.disabled {
+    @apply pointer-events-none hover:bg-transparent hover:cursor-default;
+  }
 }
