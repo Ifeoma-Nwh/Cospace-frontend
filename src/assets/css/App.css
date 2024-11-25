@@ -68,27 +68,21 @@ body {
   .toasts-container {
     @apply flex flex-col-reverse gap-y-3 z-50 fixed top-4 right-4 mt-8;
   }
-
   .toast {
     @apply flex items-center bg-clr-white border rounded border-clr-black shadow-lb p-4 relative overflow-hidden w-80;
   }
-
   .toast-open {
     @apply animate-slide-in;
   }
-
   .toast-close {
     @apply animate-slide-out;
   }
-
   .toast-message {
     @apply ml-3 text-clr-black text-sm font-text font-semibold;
   }
-
   .toast-progress {
     @apply absolute bottom-0 left-0 w-full h-1 bg-clr-grey;
   }
-
   .toast-progress-bar {
     @apply h-full animate-progress-bar;
   }
@@ -96,7 +90,6 @@ body {
   .dropdown {
     @apply border rounded border-clr-black bg-clr-white shadow-rb w-[50rem] h-60 px-7 py-5 flex flex-col gap-1 flex-wrap;
   }
-
   .dropdown-item {
     @apply text-2xl font-headline font-bold mb-3;
   }
@@ -124,12 +117,20 @@ body {
   .pagination-item.dots {
     @apply hover:bg-transparent hover:cursor-default;
   }
-
   .pagination-item.active {
     @apply bg-clr-primary;
   }
-
   .pagination-item.disabled {
     @apply pointer-events-none hover:bg-transparent hover:cursor-default;
+  }
+
+  .account-layout {
+    @apply flex;
+  }
+  .account-sidebar {
+    @apply w-1/5 py-10 pl-4 border-r-2 border-clr-black;
+  }
+  .account-content {
+    @apply w-4/5 py-8 pl-4;
   }
 }

@@ -7,6 +7,7 @@ import ErrorPage from "./routes/ErrorPage";
 import City from "./routes/City";
 import Account from "./routes/Account";
 import useAuthContext from "./contexts/auth/useAuthContext";
+import Admin from "./routes/Admin";
 
 export default function App() {
   const authContext = useAuthContext();
@@ -16,7 +17,14 @@ export default function App() {
       <Routes>
         <Route path="/" element={<CommonLayout />}>
           <Route index element={<Home />} />
-          <Route path="dashboard" element={<Account authUser={authUser} />} />
+          <Route
+            path="dashboard"
+            element={authUser?.roleId !== 3 && <Account authUser={authUser} />}
+          />
+          <Route
+            path="admin"
+            element={authUser?.roleId === 3 && <Admin authUser={authUser} />}
+          />
           <Route path="cities/:city_id" element={<City />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />

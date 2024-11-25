@@ -1,5 +1,5 @@
 import IUser from "../../interfaces/user";
-import Avatar from "../account/avatar";
+import Avatar from "../account/Avatar";
 import Modal from "../modal/Modal";
 import LoginForm from "./LoginForm";
 import Logout from "./Logout";
@@ -30,7 +30,7 @@ export default function AuthBar({ authUser }: Props) {
   }
   return (
     <div className="flex gap-x-4 justify-between items-center">
-      <Avatar avatarUrl={authUser.avatarUrl} />
+      <Avatar authUser={authUser} />
       <Logout />
     </div>
   );

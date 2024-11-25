@@ -1,14 +1,14 @@
 import { Navigate } from "react-router-dom";
 import IUser from "../interfaces/user";
-import Dashboard from "../components/account/Dashboard";
 import { useState } from "react";
+import Dashboard from "../components/account/Dashboard";
 import SideBar from "../components/account/SideBar";
 
 type Props = {
   authUser: IUser | null | undefined;
 };
 
-export default function Account({ authUser }: Props) {
+export default function Admin({ authUser }: Props) {
   const [activeComponent, setActiveComponent] = useState<React.ReactNode>(
     <Dashboard authUser={authUser} />
   );
