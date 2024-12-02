@@ -11,14 +11,14 @@ type PaginationProps = {
   pageSize: number;
   className?: string;
 };
-const Pagination = ({
+export default function Pagination({
   onPageChange,
   totalCount,
   siblingCount = 1,
   currentPage,
   pageSize,
   className,
-}: PaginationProps) => {
+}: PaginationProps) {
   const paginationRange = usePagination({
     currentPage,
     totalCount,
@@ -78,6 +78,4 @@ const Pagination = ({
       </li>
     </ul>
   );
-};
-
-export default Pagination;
+}
