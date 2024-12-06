@@ -1,4 +1,5 @@
 import { useGetCoworks } from "../../hooks/useCowork";
+import Table from "../common/Table";
 
 export default function Coworks() {
   const { data: coworks, isFetching, isError } = useGetCoworks();
@@ -13,11 +14,25 @@ export default function Coworks() {
   return (
     <div>
       <h1>Coworks</h1>
-      <ul>
-        {coworks?.map((cowork) => (
-          <li key={cowork.id}>{cowork.name}</li>
-        ))}
-      </ul>
+      <Table
+        tableHeadData={[
+          "id",
+          "name",
+          "address",
+          "timetable",
+          "phoneNumber",
+          "dailyPrice",
+          "monthlyPrice",
+          "thumbnailUrl",
+          "websiteUrl",
+          "cityId",
+          "createdBy",
+          "updatedBy",
+          "createdAt",
+          "updatedAt",
+        ]}
+        tableBodyData={coworks!}
+      />
     </div>
   );
 }

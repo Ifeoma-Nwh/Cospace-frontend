@@ -1,4 +1,5 @@
 import { useGetTags } from "../../hooks/useTag";
+import Table from "../common/Table";
 
 export default function Tags() {
   const { data: tags, isFetching, isError } = useGetTags();
@@ -13,11 +14,17 @@ export default function Tags() {
   return (
     <div>
       <h1>Tags</h1>
-      <ul>
-        {tags?.map((tag) => (
-          <li key={tag.id}>{tag.name}</li>
-        ))}
-      </ul>
+      <Table
+        tableHeadData={[
+          "id",
+          "name",
+          "createdAt",
+          "updatedAt",
+          "createdBy",
+          "updatedBy",
+        ]}
+        tableBodyData={tags!}
+      />
     </div>
   );
 }

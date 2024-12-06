@@ -8,6 +8,7 @@ import City from "./routes/City";
 import Account from "./routes/Account";
 import useAuthContext from "./contexts/auth/useAuthContext";
 import Admin from "./routes/Admin";
+import AccountLayout from "./components/layouts/AccountLayout";
 
 export default function App() {
   const authContext = useAuthContext();
@@ -28,6 +29,16 @@ export default function App() {
           <Route path="cities/:city_id" element={<City />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />
+        </Route>
+        <Route path="/my-account" element={<AccountLayout />}>
+          <Route
+            path="dashboard"
+            element={authUser?.roleId !== 3 && <Account authUser={authUser} />}
+          />
+          <Route
+            path="admin"
+            element={authUser?.roleId === 3 && <Admin authUser={authUser} />}
+          />
         </Route>
       </Routes>
     </div>

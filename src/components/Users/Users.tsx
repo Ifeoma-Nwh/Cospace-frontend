@@ -1,4 +1,5 @@
 import { useGetUsers } from "../../hooks/useUser";
+import Table from "../common/Table";
 
 export default function Users() {
   const { data: users, isFetching, isError } = useGetUsers();
@@ -13,11 +14,17 @@ export default function Users() {
   return (
     <div>
       <h1>Users</h1>
-      <ul>
-        {users?.map((user) => (
-          <li key={user.id}>{user.email}</li>
-        ))}
-      </ul>
+      <Table
+        tableHeadData={[
+          "id",
+          "email",
+          "fullName",
+          "roleId",
+          "createdAt",
+          "updatedAt",
+        ]}
+        tableBodyData={users!}
+      />
     </div>
   );
 }

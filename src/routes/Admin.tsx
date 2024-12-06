@@ -20,7 +20,7 @@ export default function Admin({ authUser }: Props) {
     <div className="account-layout">
       <SideBar
         authUser={authUser}
-        forAdmin={false}
+        forAdmin={true}
         forModerator={false}
         setActiveComponent={setActiveComponent}
       />

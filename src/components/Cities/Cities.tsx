@@ -1,4 +1,5 @@
 import { useGetCities } from "../../hooks/useCity";
+import Table from "../common/Table";
 
 export default function Cities() {
   const { data: cities, isFetching, isError } = useGetCities();
@@ -13,11 +14,10 @@ export default function Cities() {
   return (
     <div>
       <h1>Cities</h1>
-      <ul>
-        {cities?.map((city) => (
-          <li key={city.id}>{city.name}</li>
-        ))}
-      </ul>
+      <Table
+        tableHeadData={["id", "name", "zipcode", "createdAt", "updatedAt"]}
+        tableBodyData={cities!}
+      />
     </div>
   );
 }

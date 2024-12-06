@@ -7,7 +7,11 @@ type Props = {
 
 export default function Avatar({ authUser }: Props) {
   return (
-    <Link to={authUser?.roleId === 3 ? "/admin" : "/dashboard"}>
+    <Link
+      to={
+        authUser?.roleId === 3 ? "/my-account/admin" : "/my-account/dashboard"
+      }
+    >
       <div>
         <img
           className="h-10 w-10 rounded-full hover:border-2 hover:border-clr-primary"
