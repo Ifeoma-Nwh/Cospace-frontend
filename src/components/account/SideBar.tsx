@@ -44,12 +44,12 @@ export default function SideBar({
 
   return (
     <div className="account-sidebar">
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-y-5">
         {links.map((link, index) => (
-          <li key={index} className="">
+          <li key={index} className="border">
             <button
               onClick={() => setActiveComponent(link.component)}
-              className="text-clr-black hover:underline"
+              className="w-full py-4 pl-2 text-left text-clr-black font-text font-bold hover:underline"
             >
               {link.label}
             </button>

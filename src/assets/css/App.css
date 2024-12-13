@@ -125,16 +125,19 @@ body {
   }
 
   .account-layout {
-    @apply flex h-[90vh];
+    @apply container md:mx-auto h-full flex gap-x-16;
   }
   .account-sidebar {
-    @apply w-1/5 py-10 pl-4 border-r-2 border-clr-black;
+    @apply w-1/6 py-10 pr-4 border-r-2 border-clr-black;
   }
   .account-content {
-    @apply w-4/5 py-8 pl-10;
+    @apply w-5/6 py-8;
   }
 
   .table {
     @apply table-auto border-collapse w-full;
+  }
+  .table thead th svg {
+    @apply inline;
   }
 }
