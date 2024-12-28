@@ -6,7 +6,8 @@ import {
   getCity,
   updateCity,
 } from "../api/cities";
-import ICity from "../interfaces/city";
+import ICreateCity from "../interfaces/City/createCity";
+import IUpdateCity from "../interfaces/City/updateCity";
 
 export const useGetCities = () => {
   return useQuery({ queryKey: ["cities"], queryFn: getCities });
@@ -19,7 +20,7 @@ export const useGetCity = (id: number) => {
 export const useCreateCity = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (newCity: ICity) => createCity(newCity),
+    mutationFn: (newCity: ICreateCity) => createCity(newCity),
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["cities"] });
     },
@@ -29,7 +30,7 @@ export const useCreateCity = () => {
 export const useUpdateCity = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (updatedCity: ICity) => updateCity(updatedCity),
+    mutationFn: (updatedCity: IUpdateCity) => updateCity(updatedCity),
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["cities"] });
     },

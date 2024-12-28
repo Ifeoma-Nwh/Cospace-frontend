@@ -109,26 +109,26 @@ body {
   }
 
   .pagination-container {
-    @apply flex list-none;
+    @apply mx-auto flex gap-x-6 list-none;
   }
   .pagination-item {
-    @apply mx-auto my-1 px-3 h-8 min-w-8 flex items-center rounded-full text-clr-black text-sm text-center hover:cursor-pointer hover:border hover:border-clr-black;
+    @apply px-3 h-8 min-w-8 flex items-center rounded-full text-clr-black text-sm text-center hover:cursor-pointer hover:border hover:border-clr-black;
   }
   .pagination-item.dots {
     @apply hover:bg-transparent hover:cursor-default;
   }
   .pagination-item.active {
-    @apply bg-clr-primary;
+    @apply bg-slate-300;
   }
   .pagination-item.disabled {
     @apply pointer-events-none hover:bg-transparent hover:cursor-default;
   }
 
   .account-layout {
-    @apply container md:mx-auto h-full flex gap-x-16;
+    @apply container md:mx-auto h-full flex gap-x-20;
   }
   .account-sidebar {
-    @apply w-1/6 py-10 pr-4 border-r-2 border-clr-black;
+    @apply w-1/6 min-w-64 py-10 pr-4;
   }
   .account-content {
     @apply w-5/6 py-8;

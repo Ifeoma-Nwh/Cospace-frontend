@@ -5,11 +5,16 @@ type InputProps = {
   type: string;
   required?: boolean;
   placeholder?: string;
-  value?: string;
+  value?: string | number;
   inputClass?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   checked?: boolean;
+  accept?: string;
+  src?: string;
+  alt?: string;
+  min?: number;
+  max?: number;
 };
 
 export default function Input(props: InputProps) {
@@ -31,6 +36,11 @@ export default function Input(props: InputProps) {
         onChange={props.onChange}
         className={props.inputClass}
         checked={props.checked}
+        accept={props.type === "file" ? props.accept : undefined}
+        src={props.src}
+        alt={props.alt}
+        min={props.min}
+        max={props.max}
       />
       {props.error && <p className="text-clr-alert">{props.error}</p>}
     </div>

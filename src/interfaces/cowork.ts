@@ -1,4 +1,4 @@
-import ICity from "./city";
+import ICity from "./City/city";
 import ITag from "./tag";
 import IUser from "./user";
 
@@ -13,7 +13,7 @@ export default interface ICowork {
   monthlyPrice: number;
   thumbnailUrl: string | null;
   websiteUrl: string | null;
-  cityId: number;
+  cityId: number | null;
   createdBy: number;
   updatedBy: number | null;
   createdAt: Date;

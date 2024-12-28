@@ -1,4 +1,6 @@
-import ICity from "../interfaces/city";
+import ICity from "../interfaces/City/city";
+import ICreateCity from "../interfaces/City/createCity";
+import IUpdateCity from "../interfaces/City/updateCity";
 import api from "./api";
 
 export async function getCities(): Promise<ICity[]> {
@@ -11,12 +13,12 @@ export async function getCity(id: number): Promise<ICity> {
   return city;
 }
 
-export async function createCity(city: ICity): Promise<ICity> {
+export async function createCity(city: ICreateCity): Promise<ICity> {
   const createdCity = await api("/cities", "POST", city);
   return createdCity;
 }
 
-export async function updateCity(city: ICity): Promise<ICity> {
+export async function updateCity(city: IUpdateCity): Promise<ICity> {
   const updatedCity = await api(`/cities/${city.id}`, "PUT", city);
   return updatedCity;
 }

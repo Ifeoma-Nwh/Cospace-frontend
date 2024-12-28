@@ -41,41 +41,43 @@ export default function Pagination({
 
   const lastPage = paginationRange![paginationRange!.length - 1];
   return (
-    <ul className={`pagination-container ${className}`}>
-      {/* Left navigation arrow */}
-      <li
-        className={`pagination-item ${currentPage === 1 ? "disabled" : ""}`}
-        onClick={onPrevious}
-      >
-        <MaterialSymbolsChevronLeftRounded width="0.4em" height="0.4em" />
-      </li>
-      {paginationRange?.map((pageNumber) => {
-        // If the pageItem is a DOT, render the DOTS unicode character
-        if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">&#8230;</li>;
-        }
+    <div className="mt-2 flex">
+      <ul className={`pagination-container ${className}`}>
+        {/* Left navigation arrow */}
+        <li
+          className={`pagination-item ${currentPage === 1 ? "disabled" : ""}`}
+          onClick={onPrevious}
+        >
+          <MaterialSymbolsChevronLeftRounded />
+        </li>
+        {paginationRange?.map((pageNumber) => {
+          // If the pageItem is a DOT, render the DOTS unicode character
+          if (pageNumber === DOTS) {
+            return <li className="pagination-item dots">&#8230;</li>;
+          }
 
-        // Render our Page Pills
-        return (
-          <li
-            className={`pagination-item ${
-              pageNumber === currentPage ? "active" : ""
-            }`}
-            onClick={() => onPageChange(pageNumber as number)}
-          >
-            {pageNumber}
-          </li>
-        );
-      })}
-      {/*  Right Navigation arrow */}
-      <li
-        className={`pagination-item ${
-          currentPage === lastPage ? "disabled" : ""
-        }`}
-        onClick={onNext}
-      >
-        <MaterialSymbolsChevronRightRounded width="0.4em" height="0.4em" />
-      </li>
-    </ul>
+          // Render our Page Pills
+          return (
+            <li
+              className={`pagination-item ${
+                pageNumber === currentPage ? "active" : ""
+              }`}
+              onClick={() => onPageChange(pageNumber as number)}
+            >
+              {pageNumber}
+            </li>
+          );
+        })}
+        {/*  Right Navigation arrow */}
+        <li
+          className={`pagination-item ${
+            currentPage === lastPage ? "disabled" : ""
+          }`}
+          onClick={onNext}
+        >
+          <MaterialSymbolsChevronRightRounded />
+        </li>
+      </ul>
+    </div>
   );
 }

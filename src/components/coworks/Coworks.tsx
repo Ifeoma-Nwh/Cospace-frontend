@@ -19,17 +19,17 @@ export default function Coworks() {
           "id",
           "name",
           "address",
+          "cityId",
+          "createdBy",
+          "updatedBy",
+          "createdAt",
+          "updatedAt",
           "timetable",
           "phoneNumber",
           "dailyPrice",
           "monthlyPrice",
           "thumbnailUrl",
           "websiteUrl",
-          "cityId",
-          "createdBy",
-          "updatedBy",
-          "createdAt",
-          "updatedAt",
         ]}
         tableBodyData={coworks!}
       />

@@ -1,5 +1,5 @@
-import ICowork from "./cowork";
-import User from "./user";
+import ICowork from "../cowork";
+import User from "../user";
 
 export default interface ICity {
   id: number;

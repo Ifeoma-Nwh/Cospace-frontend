@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { dropdownMenu } from "../../data/DropdownMenu";
 import { useGetCities } from "../../hooks/useCity";
 import DropdownMenu from "./DropdownMenu";
-import ICity from "../../interfaces/city";
+import ICity from "../../interfaces/City/city";
 import { useState } from "react";
 
 import MaterialSymbolsArrowDropUpRounded from "~icons/material-symbols/arrow-drop-up-rounded";
