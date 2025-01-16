@@ -21,7 +21,7 @@
 
 @layer base {
   :root {
-    --text: #000000;
+    --text: #09090b;
     --background: #ffffff;
     --primary: #b514fe;
     --secondary: #faff1c;
@@ -32,11 +32,11 @@
     --warning: #ff8b47;
     --success: #3cd39e;
 
-    --shadow: #000000;
+    --shadow: #09090b;
   }
   .dark {
     --text: #fff;
-    --background: #000;
+    --background: #09090b;
     --primary: #a001e9;
     --secondary: #e2e600;
 

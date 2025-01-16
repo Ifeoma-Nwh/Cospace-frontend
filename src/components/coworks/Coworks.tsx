@@ -1,5 +1,5 @@
 import { useGetCoworks } from "../../hooks/useCowork";
-import Table from "../common/Table";
+import Table from "../common/Table/Table";
 
 export default function Coworks() {
   const { data: coworks, isFetching, isError } = useGetCoworks();

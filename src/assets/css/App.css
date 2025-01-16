@@ -31,15 +31,15 @@ body {
   }
 
   h4 {
-    @apply text-xl font-headline font-bold;
+    @apply text-xl font-text font-bold;
   }
 
   h5 {
-    @apply text-lg font-headline font-bold;
+    @apply text-lg font-text font-bold;
   }
 
   h6 {
-    @apply text-base font-headline font-bold;
+    @apply text-base font-text font-bold;
   }
 
   p,
@@ -128,7 +128,7 @@ body {
     @apply container md:mx-auto h-full flex gap-x-20;
   }
   .account-sidebar {
-    @apply w-1/6 min-w-64 py-10 pr-4;
+    @apply w-1/6 min-w-64 pt-2;
   }
   .account-content {
     @apply w-5/6 py-8;

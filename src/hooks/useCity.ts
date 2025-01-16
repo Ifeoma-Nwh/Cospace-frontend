@@ -21,8 +21,11 @@ export const useCreateCity = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (newCity: ICreateCity) => createCity(newCity),
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cities"] });
+    },
+    onError: (error) => {
+      console.error("Error creating city:", error);
     },
   });
 };
@@ -31,8 +34,12 @@ export const useUpdateCity = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (updatedCity: IUpdateCity) => updateCity(updatedCity),
-    onSettled: () => {
+    onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ["cities"] });
+      queryClient.invalidateQueries({ queryKey: ["city", variables.id] });
+    },
+    onError: (error) => {
+      console.error("Error updating city:", error);
     },
   });
 };
@@ -41,8 +48,11 @@ export const useDeleteCity = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => deleteCity(id),
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cities"] });
+    },
+    onError: (error) => {
+      console.error("Error deleting city:", error);
     },
   });
 };

@@ -1,5 +1,5 @@
 import { useGetTags } from "../../hooks/useTag";
-import Table from "../common/Table";
+import Table from "../common/Table/Table";
 
 export default function Tags() {
   const { data: tags, isFetching, isError } = useGetTags();

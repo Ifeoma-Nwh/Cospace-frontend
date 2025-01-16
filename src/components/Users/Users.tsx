@@ -1,5 +1,5 @@
 import { useGetUsers } from "../../hooks/useUser";
-import Table from "../common/Table";
+import Table from "../common/Table/Table";
 
 export default function Users() {
   const { data: users, isFetching, isError } = useGetUsers();

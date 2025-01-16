@@ -22,7 +22,7 @@ export default function Input(props: InputProps) {
   const flexClass = "flex-col";
 
   return (
-    <div className={`flex ${!isCheckboxOrRadio ? flexClass : ""} gap-1`}>
+    <div className={`flex ${!isCheckboxOrRadio ? flexClass : ""} gap-1 mb-3`}>
       <label htmlFor={props.name} className={props.labelClass}>
         {props.label}
       </label>
