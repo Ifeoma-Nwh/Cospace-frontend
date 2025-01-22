@@ -19,8 +19,12 @@ export const useUpdateUserRole = (id: number, roleId: number) => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: () => updateUserRole(id, roleId),
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });
+      queryClient.invalidateQueries({ queryKey: ["user", id] });
+    },
+    onError: (error) => {
+      console.error("Error updating user role:", error);
     },
   });
 };

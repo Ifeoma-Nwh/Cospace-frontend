@@ -62,7 +62,7 @@ body {
 
 @layer components {
   .modal {
-    @apply w-2/5 h-fit absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-clr-black shadow-2rb p-4 flex flex-col gap-y-4 items-center;
+    @apply w-2/6 h-3/5 absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-clr-black shadow-2rb p-4 flex flex-col gap-y-4 items-center;
   }
 
   .toasts-container {
@@ -97,11 +97,22 @@ body {
   .btn {
     @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-white text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
   }
+  .btn-disabled {
+    @apply px-4 py-2 min-w-32 border-clr-grey border-2 rounded bg-clr-white text-clr-grey;
+  }
   .btn-primary {
     @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-primary text-clr-white -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
   }
   .btn-secondary {
     @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-secondary text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
+  }
+
+  .btn-success {
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-success text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
+  }
+
+  .btn-alert {
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-alert text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
   }
 
   .card {

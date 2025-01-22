@@ -21,6 +21,9 @@ export const useCreateCowork = () => {
   return useMutation({
     mutationFn: (cowork: ICowork) => createCowork(cowork),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["coworks"] }),
+    onError: (error) => {
+      console.error("Error creating cowork:", error);
+    },
   });
 };
 
@@ -28,7 +31,13 @@ export const useUpdateCowork = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (cowork: ICowork) => updateCowork(cowork),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["coworks"] }),
+    onSuccess: (_, variables) => {
+      queryClient.invalidateQueries({ queryKey: ["coworks"] });
+      queryClient.invalidateQueries({ queryKey: ["cowork", variables.id] });
+    },
+    onError: (error) => {
+      console.error("Error updating cowork:", error);
+    },
   });
 };
 
@@ -37,5 +46,8 @@ export const useDeleteCowork = () => {
   return useMutation({
     mutationFn: (id: number) => deleteCowork(id),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["coworks"] }),
+    onError: (error) => {
+      console.error("Error deleting cowork:", error);
+    },
   });
 };

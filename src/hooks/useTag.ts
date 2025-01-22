@@ -14,8 +14,11 @@ export const useCreateTag = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (newTag: ITag) => createTag(newTag),
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["tags"] });
+    },
+    onError: (error) => {
+      console.error("Error creating tag:", error);
     },
   });
 };
@@ -24,8 +27,12 @@ export const useUpdateTag = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (updatedTag: ITag) => updateTag(updatedTag),
-    onSettled: () => {
+    onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ["tags"] });
+      queryClient.invalidateQueries({ queryKey: ["tag", variables.id] });
+    },
+    onError: (error) => {
+      console.error("Error updating tag:", error);
     },
   });
 };
@@ -34,8 +41,11 @@ export const useDeleteTag = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (id: number) => deleteTag(id),
-    onSettled: () => {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["tags"] });
+    },
+    onError: (error) => {
+      console.error("Error deleting tag:", error);
     },
   });
 };

@@ -20,6 +20,11 @@ type Props = {
 };
 
 export default function EditCity({ cityId, onBack }: Props) {
+  const authContext = useAuthContext();
+  const authUser = authContext?.state.authUser;
+  const mutation = useUpdateCity();
+  const toast = useToast();
+
   const [name, setName] = useState<string>("");
   const [zipcode, setZipcode] = useState<string>("");
   const [selectedCoworkIds, setSelectedCoworkIds] = useState<number[]>([]);
@@ -32,6 +37,11 @@ export default function EditCity({ cityId, onBack }: Props) {
     isError: coworksError,
   } = useGetCoworks();
 
+  const cityCoworks = city?.coworksByCity;
+  const coworksWithoutCity = coworks?.filter(
+    (cowork) => !cityCoworks?.some((citycowork) => citycowork.id === cowork.id)
+  );
+
   useEffect(() => {
     if (city) {
       setName(city.name);
@@ -41,17 +51,6 @@ export default function EditCity({ cityId, onBack }: Props) {
       );
     }
   }, [city]);
-
-  const authContext = useAuthContext();
-  const authUser = authContext?.state.authUser;
-
-  const mutation = useUpdateCity();
-  const toast = useToast();
-
-  const cityCoworks = city?.coworksByCity;
-  const coworksWithoutCity = coworks?.filter(
-    (cowork) => !cityCoworks?.some((citycowork) => citycowork.id === cowork.id)
-  );
 
   const handleCoworkSelection = (coworkId: number, isSelected: boolean) => {
     setSelectedCoworkIds((prev) =>
@@ -108,7 +107,7 @@ export default function EditCity({ cityId, onBack }: Props) {
         >
           <MaterialSymbolsArrowBackRounded width={28} height={28} />
         </Button>
-        <h4>Modifier une ville</h4>
+        <h4>Mis à jour de la ville</h4>
       </div>
       <div>
         <Form onSubmit={handleUpdateCity}>
@@ -119,6 +118,7 @@ export default function EditCity({ cityId, onBack }: Props) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             inputClass="w-1/2"
+            required
           />
           <Input
             name="zipcode"
@@ -127,6 +127,7 @@ export default function EditCity({ cityId, onBack }: Props) {
             value={zipcode}
             onChange={(e) => setZipcode(e.target.value)}
             inputClass="w-1/2"
+            required
           />
           <div className="mt-6">
             <p className="mb-2">Coworks actuellement dans la ville :</p>
@@ -145,23 +146,25 @@ export default function EditCity({ cityId, onBack }: Props) {
             ))}
           </div>
           <hr />
-          <div className="mt-4">
-            <h5 className="mb-2">Ajouter des coworks à la ville :</h5>
+          <div className="my-4">
+            <h5 className="mb-3">Ajouter des coworks à la ville :</h5>
             {coworksFetching && <div>Loading...</div>}
             {coworksError && <div>Error in fetching coworks</div>}
-            {coworksWithoutCity?.map((cowork) => (
-              <Input
-                key={cowork.id}
-                name="coworks"
-                label={cowork.name}
-                type="checkbox"
-                value={cowork.id}
-                checked={selectedCoworkIds.includes(cowork.id)}
-                onChange={(e) =>
-                  handleCoworkSelection(cowork.id, e.target.checked)
-                }
-              />
-            ))}
+            <div className="flex flex-wrap gap-x-4">
+              {coworksWithoutCity?.map((cowork) => (
+                <Input
+                  key={cowork.id}
+                  name="cowork"
+                  label={cowork.name}
+                  type="checkbox"
+                  value={cowork.id}
+                  checked={selectedCoworkIds.includes(cowork.id)}
+                  onChange={(e) =>
+                    handleCoworkSelection(cowork.id, e.target.checked)
+                  }
+                />
+              ))}
+            </div>
           </div>
           <div className="flex justify-end">
             <Button
