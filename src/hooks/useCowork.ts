@@ -6,7 +6,7 @@ import {
   getCoworks,
   updateCowork,
 } from "../api/coworks";
-import ICowork from "../interfaces/cowork";
+import ICowork from "../interfaces/Cowork/cowork";
 
 export const useGetCoworks = () => {
   return useQuery({ queryKey: ["coworks"], queryFn: getCoworks });

@@ -1,5 +1,5 @@
 import ICity from "./city";
-import ICowork from "./cowork";
+import ICowork from "./Cowork/cowork";
 import IProfile from "./profile";
 import IRole from "./role";
 import ITag from "./tag";

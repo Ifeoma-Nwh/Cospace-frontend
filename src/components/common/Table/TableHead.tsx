@@ -1,6 +1,6 @@
 import ICity from "../../../interfaces/City/city";
-import ICowork from "../../../interfaces/cowork";
-import ITag from "../../../interfaces/tag";
+import ICowork from "../../../interfaces/Cowork/cowork";
+import ITag from "../../../interfaces/Tag/tag";
 import IUser from "../../../interfaces/user";
 
 import MaterialSymbolsArrowDropUpRounded from "~icons/material-symbols/arrow-drop-up-rounded";

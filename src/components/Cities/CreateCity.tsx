@@ -43,7 +43,7 @@ export default function CreateCity({ onBack }: Props) {
   const handleCreateCity = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const createdFields: Omit<ICreateCity, "id"> = {
+    const createdFields: ICreateCity = {
       createdBy: authUser!.id,
       name,
       zipcode,

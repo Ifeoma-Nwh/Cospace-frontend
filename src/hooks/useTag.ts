@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getTags, getTag, createTag, updateTag, deleteTag } from "../api/tags";
-import ITag from "../interfaces/tag";
+import ICreateTag from "../interfaces/Tag/createTag";
+import IUpdateTag from "../interfaces/Tag/updateTag";
 
 export const useGetTags = () => {
   return useQuery({ queryKey: ["tags"], queryFn: getTags });
@@ -13,7 +14,7 @@ export const useGetTag = (id: number) => {
 export const useCreateTag = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (newTag: ITag) => createTag(newTag),
+    mutationFn: (newTag: ICreateTag) => createTag(newTag),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["tags"] });
     },
@@ -26,7 +27,7 @@ export const useCreateTag = () => {
 export const useUpdateTag = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (updatedTag: ITag) => updateTag(updatedTag),
+    mutationFn: (updatedTag: IUpdateTag) => updateTag(updatedTag),
     onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ["tags"] });
       queryClient.invalidateQueries({ queryKey: ["tag", variables.id] });

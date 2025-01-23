@@ -1,4 +1,4 @@
-import ICowork from "../interfaces/cowork";
+import ICowork from "../interfaces/Cowork/cowork";
 import api from "./api";
 
 export async function getCoworks(): Promise<ICowork[]> {

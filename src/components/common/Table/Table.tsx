@@ -1,7 +1,7 @@
 import { ReactNode, useMemo, useState } from "react";
 import ICity from "../../../interfaces/City/city";
-import ICowork from "../../../interfaces/cowork";
-import ITag from "../../../interfaces/tag";
+import ICowork from "../../../interfaces/Cowork/cowork";
+import ITag from "../../../interfaces/Tag/tag";
 import IUser from "../../../interfaces/user";
 
 import Pagination from "../Pagination";

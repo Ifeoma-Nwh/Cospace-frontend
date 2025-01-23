@@ -1,4 +1,4 @@
-import ICowork from "../cowork";
+import ICowork from "../Cowork/cowork";
 import User from "../user";
 
 export default interface ICity {

@@ -1,4 +1,4 @@
-import ICowork from "../../interfaces/cowork";
+import ICowork from "../../interfaces/Cowork/cowork";
 
 export default function CoworkCard({ cowork }: { cowork: ICowork }) {
   return (

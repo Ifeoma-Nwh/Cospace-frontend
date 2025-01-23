@@ -1,4 +1,6 @@
-import ITag from "../interfaces/tag";
+import ITag from "../interfaces/Tag/tag";
+import ICreateTag from "../interfaces/Tag/createTag";
+import IUpdateTag from "../interfaces/Tag/updateTag";
 import api from "./api";
 
 export async function getTags(): Promise<ITag[]> {
@@ -11,12 +13,12 @@ export async function getTag(id: number): Promise<ITag> {
   return tag;
 }
 
-export async function createTag(tag: ITag): Promise<ITag> {
+export async function createTag(tag: ICreateTag): Promise<ITag> {
   const createdTag = await api("/tags", "POST", tag);
   return createdTag;
 }
 
-export async function updateTag(tag: ITag): Promise<ITag> {
+export async function updateTag(tag: IUpdateTag): Promise<ITag> {
   const updatedTag = await api(`/tags/${tag.id}`, "PUT", tag);
   return updatedTag;
 }

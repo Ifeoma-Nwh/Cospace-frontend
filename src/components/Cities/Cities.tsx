@@ -4,8 +4,9 @@ import ICity from "../../interfaces/City/city";
 import Table from "../common/Table/Table";
 import EditCity from "./EditCity";
 import CreateCity from "./CreateCity";
-import Button from "../common/Button";
 import DeleteCity from "./DeleteCity";
+
+import Button from "../common/Button";
 
 type ViewState = "table" | "edit" | "create";
 

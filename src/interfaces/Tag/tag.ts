@@ -1,5 +1,5 @@
-import ICowork from "./cowork";
-import IUser from "./user";
+import ICowork from "../Cowork/cowork";
+import IUser from "../user";
 
 export default interface ITag {
   id: number;
