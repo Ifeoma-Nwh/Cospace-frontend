@@ -104,6 +104,7 @@ export default function EditCity({ tagId, onBack }: Props) {
           />
           <div className="mt-6">
             <p className="mb-2">Coworks ayant ce tag :</p>
+            {taggedCoworks?.length === 0 && <p>Aucun cowork ayant ce tag</p>}
             {taggedCoworks?.map((cowork) => (
               <Input
                 key={cowork.id}

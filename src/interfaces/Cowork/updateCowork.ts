@@ -1,17 +1,15 @@
-import ITag from "../Tag/tag";
-
-export interface IUpdateCowork {
+export default interface IUpdateCowork {
   id: number;
   name?: string;
   address?: string;
-  description?: string | null;
+  description?: string | undefined;
   timetable?: string;
   phoneNumber?: string;
   dailyPrice?: number;
   monthlyPrice?: number;
-  thumbnailUrl?: string | null;
-  websiteUrl?: string | null;
+  thumbnailUrl?: string | undefined;
+  websiteUrl?: string | undefined;
   cityId?: number | null;
   updatedBy: number;
-  coworkTags?: ITag[] | null;
+  coworkTags?: number[] | null;
 }

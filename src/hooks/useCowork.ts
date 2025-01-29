@@ -6,7 +6,8 @@ import {
   getCoworks,
   updateCowork,
 } from "../api/coworks";
-import ICowork from "../interfaces/Cowork/cowork";
+import IUpdateCowork from "../interfaces/Cowork/updateCowork";
+import ICreateCowork from "../interfaces/Cowork/createCowork";
 
 export const useGetCoworks = () => {
   return useQuery({ queryKey: ["coworks"], queryFn: getCoworks });
@@ -19,7 +20,7 @@ export const useGetCowork = (id: number) => {
 export const useCreateCowork = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (cowork: ICowork) => createCowork(cowork),
+    mutationFn: (cowork: ICreateCowork) => createCowork(cowork),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["coworks"] }),
     onError: (error) => {
       console.error("Error creating cowork:", error);
@@ -30,7 +31,7 @@ export const useCreateCowork = () => {
 export const useUpdateCowork = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (cowork: ICowork) => updateCowork(cowork),
+    mutationFn: (cowork: IUpdateCowork) => updateCowork(cowork),
     onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ["coworks"] });
       queryClient.invalidateQueries({ queryKey: ["cowork", variables.id] });

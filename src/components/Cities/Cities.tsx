@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useGetCities } from "../../hooks/useCity";
 import ICity from "../../interfaces/City/city";
-import Table from "../common/Table/Table";
 import EditCity from "./EditCity";
 import CreateCity from "./CreateCity";
 import DeleteCity from "./DeleteCity";
 
+import Table from "../common/Table/Table";
 import Button from "../common/Button";
 
 type ViewState = "table" | "edit" | "create";

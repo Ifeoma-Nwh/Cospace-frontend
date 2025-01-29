@@ -6,13 +6,13 @@ export default interface ICowork {
   id: number;
   name: string;
   address: string;
-  description: string | null;
+  description: string | undefined;
   timetable: string;
   phoneNumber: string;
   dailyPrice: number;
   monthlyPrice: number;
-  thumbnailUrl: string | null;
-  websiteUrl: string | null;
+  thumbnailUrl: string | undefined;
+  websiteUrl: string | undefined;
   cityId: number | null;
   createdBy: number;
   updatedBy: number | null;

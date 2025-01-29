@@ -1,9 +1,9 @@
 type SelectProps = {
   name: string;
   label: string;
-  options: { value: string; label: string }[];
+  options: { value: string; label: string; disabled?: boolean }[];
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  value: string;
+  value: string | number;
 };
 
 export default function Select(props: SelectProps) {
@@ -13,7 +13,11 @@ export default function Select(props: SelectProps) {
       <select name={props.name} id={props.name} onChange={props.onChange}>
         <option value="">Select an option</option>
         {props.options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option
+            disabled={option.disabled}
+            key={option.value}
+            value={option.value}
+          >
             {option.label}
           </option>
         ))}

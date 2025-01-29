@@ -130,6 +130,7 @@ export default function EditCity({ cityId, onBack }: Props) {
           />
           <div className="mt-6">
             <p className="mb-2">Coworks actuellement dans la ville :</p>
+            {cityCoworks?.length === 0 && <p>Aucun cowork dans la ville</p>}
             {cityCoworks?.map((cowork) => (
               <Input
                 key={cowork.id}
