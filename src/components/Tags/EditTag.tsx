@@ -17,7 +17,7 @@ type Props = {
   onBack: () => void;
 };
 
-export default function EditCity({ tagId, onBack }: Props) {
+export default function EditTag({ tagId, onBack }: Props) {
   const authContext = useAuthContext();
   const authUser = authContext?.state.authUser;
   const mutation = useUpdateTag();
@@ -108,7 +108,7 @@ export default function EditCity({ tagId, onBack }: Props) {
             {taggedCoworks?.map((cowork) => (
               <Input
                 key={cowork.id}
-                name="coworks"
+                name="cowork"
                 label={cowork.name}
                 type="checkbox"
                 value={cowork.id}

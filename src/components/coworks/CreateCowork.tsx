@@ -31,9 +31,13 @@ export default function CreateCowork({ onBack }: Props) {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [dailyPrice, setDailyPrice] = useState<number>(0);
   const [monthlyPrice, setMonthlyPrice] = useState<number>(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_thumbnailFile, setThumbnailFile] = useState<File | null>(null);
   const [thumbnailUrl, setThumbnailUrl] = useState<string | undefined>();
   const [websiteUrl, setWebsiteUrl] = useState<string | undefined>();
   const [selectedTagsIds, setSelectedTagsIds] = useState<number[]>([]);
+
+  console.log("🚀 ~ CreateCowork ~ thumbnailUrl:", thumbnailUrl);
 
   const {
     data: tags,
@@ -45,6 +49,22 @@ export default function CreateCowork({ onBack }: Props) {
     isFetching: citiesFetching,
     isError: citiesError,
   } = useGetCities();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (thumbnailUrl) {
+      URL.revokeObjectURL(thumbnailUrl);
+    }
+
+    const file = e.target.files?.[0];
+    if (file) {
+      setThumbnailFile(file);
+      const newUrl = URL.createObjectURL(file);
+      setThumbnailUrl(newUrl);
+    } else {
+      setThumbnailFile(null);
+      setThumbnailUrl(undefined);
+    }
+  };
 
   const handleCitySelection = (cityId: number) => {
     setCityId(cityId);
@@ -134,7 +154,7 @@ export default function CreateCowork({ onBack }: Props) {
         </Button>
         <h4>Nouveau Cowork</h4>
       </div>
-      <div>
+      <div className="mb-6">
         <Form onSubmit={handleUpdateCowork}>
           <Input
             name="name"
@@ -200,12 +220,15 @@ export default function CreateCowork({ onBack }: Props) {
           />
           <Input
             name="thumbnailUrl"
-            label="URL de l'image"
-            type="text"
-            value={thumbnailUrl}
-            onChange={(e) => setThumbnailUrl(e.target.value)}
+            label="Télécharger une image"
+            type="file"
+            accept="image/*"
             inputClass="w-1/2"
+            onChange={handleFileChange}
           />
+          <div className="w-1/2 h-80 mb-4 border-2 border-clr-black">
+            {thumbnailUrl && <img src={thumbnailUrl} alt="Preview" />}
+          </div>
           <Input
             name="websiteUrl"
             label="URL du site"
