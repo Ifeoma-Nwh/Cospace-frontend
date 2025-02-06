@@ -25,8 +25,8 @@ export default function NavBar({ classes }: Props) {
   };
 
   return (
-    <nav className={`w-2/5 ${classes}`}>
-      <ul className="flex gap-x-8 justify-between items-center">
+    <nav className={`${classes}`}>
+      <ul className="flex gap-x-8 items-center">
         {dropdownMenu.map((menu, key) =>
           menu.name === "Cities" ? (
             <div

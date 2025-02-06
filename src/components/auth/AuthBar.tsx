@@ -14,16 +14,16 @@ export default function AuthBar({ authUser }: Props) {
 
   if (!authUser) {
     return (
-      <div className="flex justify-center gap-x-6 mt-1 w-1/4">
-        <Modal label="Sign up" btnClass="btn" modalBgColor="bg-clr-white">
-          <RegisterForm />
+      <div className="flex justify-between mt-1 w-1/5">
+        <Modal label="Log in" btnClass="link" modalBgColor="bg-clr-white">
+          <LoginForm />
         </Modal>
         <Modal
-          label="Log in"
+          label="Get started"
           btnClass="btn-secondary"
           modalBgColor="bg-clr-white"
         >
-          <LoginForm />
+          <RegisterForm />
         </Modal>
       </div>
     );

@@ -4,7 +4,7 @@ import { homeTagsSection } from "../data/HomeTagsSection";
 export default function Home() {
   return (
     <>
-      <section className="min-h-[95vh] flex justify-between bg-clr-secondary border-b-2 border-clr-black">
+      <section className="min-h-[95vh] flex justify-between bg-clr-secondary border-2 border-clr-black rounded-2xl">
         <div className="container mx-auto w-full flex justify-center items-center">
           <p className="w-4/5 text-7xl leading-relaxed font-headline font-bold text-center">
             Find your space to{" "}
