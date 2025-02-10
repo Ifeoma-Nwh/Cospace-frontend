@@ -1,5 +1,4 @@
-import Card from "../components/common/Card";
-import { homeTagsSection } from "../data/HomeTagsSection";
+import CoworkList from "../components/coworks/CoworkList";
 
 export default function Home() {
   return (
@@ -8,7 +7,7 @@ export default function Home() {
         <div className="container mx-auto w-full flex justify-center items-center">
           <p className="w-4/5 text-7xl leading-relaxed font-headline font-bold text-center">
             Find your space to{" "}
-            <span className="px-2 text-7xl bg-clr-primary font-headline font-bold shadow-lb">
+            <span className="px-2 text-7xl bg-clr-primary font-headline font-bold text-clr-white shadow-lb">
               Work
             </span>
             ,{" "}
@@ -23,7 +22,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="pt-10 container mx-auto">
+      <section className="my-10 container">
         <h1 className="text-6xl mb-6">
           Accessible coworking spaces around you
         </h1>
@@ -33,18 +32,27 @@ export default function Home() {
           workspace or just a spot to plug in your laptop, we've got you
           covered.
         </p>
-        <div className="mt-10 flex justify-between flex-wrap">
-          {homeTagsSection.map((tag, key) => (
-            <Card key={key} className="flex flex-col justify-between">
-              <div className="h-1/2">
-                <img src={tag.imgSrc} alt={tag.imgAlt} />
-              </div>
-              <div className="p-4">
-                <h3 className="text-2xl font-semibold mb-2">{tag.title}</h3>
-                <p className="text-sm text-clr-black">{tag.description}</p>
-              </div>
-            </Card>
-          ))}
+        <div className="py-10">
+          <CoworkList limit={5} />
+        </div>
+      </section>
+      <section className="my-10 bg-clr-accent border-2 border-clr-black rounded-2xl">
+        <div className="my-10 container">
+          <h1 className="text-6xl mb-6">Always be aware of events</h1>
+          <p className="max-w-3xl">
+            Stay up to date with the latest events happening in your favorite
+            coworking spaces. Whether it's a conference, a workshop, or a social
+            gathering, we've got you covered.
+          </p>
+          <div className="py-10">
+            <CoworkList limit={5} />
+          </div>
+        </div>
+      </section>
+      <section className="my-10 container mx-auto">
+        <h1 className="text-6xl mb-6">Feedbacks from our users</h1>
+        <div className="py-10">
+          <CoworkList limit={5} />
         </div>
       </section>
     </>

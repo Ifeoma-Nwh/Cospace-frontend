@@ -21,31 +21,33 @@
 
 @layer base {
   :root {
-    --text: #09090b;
-    --background: #ffffff;
-    --primary: #b514fe;
+    --text: #2d2d2d;
+    --background: #fff;
+    --primary: #607d8b;
     --secondary: #faff1c;
+    --accent: #ff5722;
 
-    --grey: #e3e3e3;
+    --grey: #4b5563;
 
     --alert: #ff5252;
     --warning: #ff8b47;
     --success: #3cd39e;
 
-    --shadow: #09090b;
+    --shadow: #2d2d2d;
   }
   .dark {
     --text: #fff;
-    --background: #09090b;
+    --background: #2d2d2d;
     --primary: #a001e9;
     --secondary: #e2e600;
+    --accent: #e2e600;
 
-    --grey: #e3e3e3;
+    --grey: #4b5563;
 
     --alert: #ad0000;
     --warning: #b84300;
     --success: #2cc38f;
 
-    --shadow: #ffffff;
+    --shadow: #fff;
   }
 }

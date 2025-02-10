@@ -4,6 +4,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       fontFamily: {
         headline: ["Neuton", "serif"], //700, 800
@@ -14,6 +17,7 @@ export default {
         "clr-white": "var(--background)",
         "clr-primary": "var(--primary)",
         "clr-secondary": "var(--secondary)",
+        "clr-accent": "var(--accent)",
         "clr-alert": "var(--alert)",
         "clr-warning": "var(--warning)",
         "clr-success": "var(--success)",

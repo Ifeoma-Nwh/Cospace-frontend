@@ -5,7 +5,7 @@ export default function AccountLayout() {
   return (
     <>
       <Header />
-      <main className="h-screen pt-16">
+      <main className="h-screen pt-32">
         <Outlet />
       </main>
     </>
