@@ -14,7 +14,7 @@ export default function App() {
   const authContext = useAuthContext();
   const authUser = authContext?.state.authUser;
   return (
-    <div className="max-w-[95vw] container bg-clr-white">
+    <div className="bg-clr-white">
       <Routes>
         <Route path="/" element={<CommonLayout />}>
           <Route index element={<Home />} />

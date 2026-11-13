@@ -1,24 +1,16 @@
 import CoworkList from "../components/coworks/CoworkList";
+import homeImage from "../assets/images/home-img.jpg";
 
 export default function Home() {
   return (
     <>
-      <section className="min-h-[95vh] flex justify-between bg-clr-secondary border-2 border-clr-black rounded-2xl">
-        <div className="container mx-auto w-full flex justify-center items-center">
-          <p className="w-4/5 text-7xl leading-relaxed font-headline font-bold text-center">
-            Find your space to{" "}
-            <span className="px-2 text-7xl bg-clr-primary font-headline font-bold text-clr-white shadow-lb">
-              Work
-            </span>
-            ,{" "}
-            <span className="px-2 text-7xl bg-clr-primary font-headline font-bold shadow-lb">
-              Connect
-            </span>{" "}
-            locally and{" "}
-            <span className="px-2 text-7xl bg-clr-primary font-headline font-bold shadow-lb">
-              Succeed
-            </span>{" "}
-            anywhere !
+      <section className="min-h-[95vh] flex justify-between bg-clr-primary border-b-2 border-clr-black">
+        <div className="w-full relative">
+          <div className="h-full">
+            <img src={homeImage} alt="home image" className="" />
+          </div>
+          <p className="absolute top-1/3 left-1/4 text-clr-white">
+            Have a work environment anywhere
           </p>
         </div>
       </section>

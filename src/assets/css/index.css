@@ -21,11 +21,11 @@
 
 @layer base {
   :root {
-    --text: #2d2d2d;
-    --background: #fff;
-    --primary: #607d8b;
-    --secondary: #faff1c;
-    --accent: #ff5722;
+    --text: #030303;
+    --background: #f8fffd;
+    --primary: #a33b20;
+    --secondary: #5a352a;
+    --accent: #27213c;
 
     --grey: #4b5563;
 

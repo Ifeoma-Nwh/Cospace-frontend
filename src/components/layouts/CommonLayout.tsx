@@ -6,7 +6,7 @@ export default function CommonLayout() {
   return (
     <div className="w-full">
       <Header />
-      <main className="pt-32">
+      <main>
         <Outlet />
       </main>
       <Footer />
