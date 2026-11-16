@@ -26,7 +26,7 @@ export default function DropdownMenu<T extends CoworkTypes<unknown>>({
   }
 
   return (
-    <div className={`absolute z-10 top-16 left-auto ${dropdownClass}`}>
+    <div className={`absolute z-10 top-12 left-auto ${dropdownClass}`}>
       <div className="mt-8">
         <ul className="dropdown">
           {listQuery?.data?.map((item) => (

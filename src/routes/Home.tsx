@@ -28,7 +28,7 @@ export default function Home() {
           <CoworkList limit={5} />
         </div>
       </section>
-      <section className="my-10 bg-clr-accent border-2 border-clr-black rounded-2xl">
+      <section className="my-10 bg-clr-white border-y-2 border-clr-black">
         <div className="my-10 container">
           <h1 className="text-6xl mb-6">Always be aware of events</h1>
           <p className="max-w-3xl">

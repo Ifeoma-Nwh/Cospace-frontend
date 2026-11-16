@@ -14,7 +14,7 @@ export default function Header() {
           <div className="flex bg-clr-black py-2 px-4 rounded-full">
             <Link
               to="/"
-              className="font-headline text-2xl uppercase text-clr-secondary"
+              className="font-headline text-2xl uppercase text-clr-white"
             >
               Co'Space
             </Link>
