@@ -62,14 +62,14 @@ body {
 
 @layer components {
   .modal {
-    @apply w-2/6 h-3/5 fixed top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-clr-black shadow-2rb p-4 flex flex-col gap-y-4 items-center;
+    @apply w-2/6 h-3/5 fixed top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/4 border-2 border-clr-black p-4 flex flex-col gap-y-4 items-center;
   }
 
   .toasts-container {
     @apply flex flex-col-reverse gap-y-3 z-50 fixed top-4 right-4 mt-8;
   }
   .toast {
-    @apply flex items-center bg-clr-white border rounded border-clr-black shadow-lb p-4 relative overflow-hidden w-80;
+    @apply flex items-center bg-clr-white border rounded border-clr-black p-4 relative overflow-hidden w-80;
   }
   .toast-open {
     @apply animate-slide-in;
@@ -88,31 +88,35 @@ body {
   }
 
   .dropdown {
-    @apply border rounded border-clr-black bg-clr-white shadow-rb w-[50rem] h-60 px-7 py-5 flex flex-col gap-1 flex-wrap;
+    @apply border rounded border-clr-black bg-clr-white w-[50rem] h-60 px-7 py-5 flex flex-col gap-1 flex-wrap;
   }
   .dropdown-item {
     @apply text-2xl font-headline font-bold mb-3;
   }
 
   .btn {
-    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-white text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 bg-clr-white text-clr-black;
   }
   .btn-disabled {
-    @apply px-4 py-2 min-w-32 border-clr-grey border-2 rounded bg-clr-white text-clr-grey;
+    @apply px-4 py-2 min-w-32 border-clr-grey border-2 bg-clr-white text-clr-grey;
   }
   .btn-primary {
-    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-primary text-clr-white -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 border-2 border-clr-black bg-clr-primary text-clr-white;
   }
   .btn-secondary {
-    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-secondary text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 border-2 border-clr-black bg-clr-secondary text-clr-white;
+  }
+
+  .btn-accent {
+    @apply px-4 py-2 border-2 border-clr-black bg-clr-accent text-clr-white;
   }
 
   .btn-success {
-    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-success text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded bg-clr-success text-clr-black;
   }
 
   .btn-alert {
-    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded shadow-rb bg-clr-alert text-clr-black -translate-x-1 -translate-y-1 transition hover:shadow-none hover:translate-x-0 hover:translate-y-0;
+    @apply px-4 py-2 min-w-32 border-clr-black border-2 rounded bg-clr-alert text-clr-black;
   }
 
   .link {
@@ -120,7 +124,7 @@ body {
   }
 
   .card {
-    @apply max-w-52 bg-clr-white border-2 border-clr-black rounded-md shadow-rb;
+    @apply max-w-52 bg-clr-white border-2 border-clr-black rounded-md;
   }
 
   .pagination-container {

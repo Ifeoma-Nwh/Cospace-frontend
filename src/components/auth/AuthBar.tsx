@@ -20,7 +20,7 @@ export default function AuthBar({ authUser }: Props) {
         </Modal>
         <Modal
           label="Get started"
-          btnClass="btn-secondary"
+          btnClass="btn-primary"
           modalBgColor="bg-clr-white"
         >
           <RegisterForm />
