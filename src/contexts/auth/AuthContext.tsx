@@ -1,27 +1,12 @@
-import { createContext, useEffect, useReducer } from "react";
-import IUser from "../../interfaces/user";
+import { useEffect, useReducer } from "react";
 import { useGetMe } from "../../hooks/useAuth";
+import { AuthContext, type AuthAction, type AuthState } from "./authContext";
 
-type State = {
-  authUser: IUser | null;
-};
-
-type Action = {
-  type: string;
-  payload: IUser | null;
-};
-
-type Dispatch = (action: Action) => void;
-
-const initialState: State = {
+const initialState: AuthState = {
   authUser: null,
 };
 
-export const AuthContext = createContext<
-  { state: State; dispatch: Dispatch } | null | undefined
->(null);
-
-const authReducer = (state: State, action: Action) => {
+const authReducer = (state: AuthState, action: AuthAction) => {
   switch (action.type) {
     case "SET_USER": {
       return {

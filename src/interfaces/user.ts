@@ -1,8 +1,8 @@
-import ICity from "./city";
+import ICity from "./City/city";
 import ICowork from "./Cowork/cowork";
 import IProfile from "./profile";
 import IRole from "./role";
-import ITag from "./tag";
+import ITag from "./Tag/tag";
 
 export default interface IUser {
   id: number;
