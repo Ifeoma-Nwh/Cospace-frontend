@@ -40,7 +40,7 @@ export default function RegisterForm() {
           }
           console.log(errors);
         },
-      }
+      },
     );
   };
 

@@ -48,8 +48,8 @@ export default function SideBar({
   const links = forAdmin
     ? adminLinks
     : forModerator
-    ? moderatorLinks
-    : accountLinks;
+      ? moderatorLinks
+      : accountLinks;
 
   const handleClick = (link: Link) => {
     setActiveLink(link.label);
@@ -57,10 +57,10 @@ export default function SideBar({
   };
 
   return (
-    <div className="account-sidebar border-x-2 border-clr-black">
+    <div className="account-sidebar border-x-2 border-clr-dark">
       <ul className="flex flex-col">
         {links.map((link, index) => (
-          <li key={index} className="w-full border-b-2 border-clr-black">
+          <li key={index} className="w-full border-b-2 border-clr-dark">
             <Button
               type="button"
               children={link.label}
@@ -68,8 +68,8 @@ export default function SideBar({
               className={`w-full py-6 pl-3 text-left font-text font-bold 
                 ${
                   activeLink === link.label
-                    ? "bg-clr-secondary text-clr-black"
-                    : "text-clr-black hover:underline"
+                    ? "bg-clr-secondary text-clr-dark"
+                    : "text-clr-dark hover:underline"
                 }`}
             />
           </li>

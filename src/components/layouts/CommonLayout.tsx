@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function CommonLayout() {
   return (
-    <div className="w-full">
+    <div className="container">
       <Header />
       <main>
         <Outlet />

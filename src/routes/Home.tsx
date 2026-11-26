@@ -4,12 +4,12 @@ import homeImage from "../assets/images/home-img.jpg";
 export default function Home() {
   return (
     <>
-      <section className="min-h-[95vh] flex justify-between bg-clr-primary border-b-2 border-clr-black">
+      <section className="min-h-[95vh] flex justify-between bg-clr-primary border-b-2 border-clr-dark">
         <div className="w-full relative">
           <div className="h-full">
             <img src={homeImage} alt="home image" className="" />
           </div>
-          <p className="absolute top-1/3 left-1/4 text-clr-white">
+          <p className="absolute top-1/3 left-1/4 text-clr-light">
             Have a work environment anywhere
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
           <CoworkList limit={5} />
         </div>
       </section>
-      <section className="my-10 bg-clr-white border-y-2 border-clr-black">
+      <section className="my-10 bg-clr-light border-y-2 border-clr-dark">
         <div className="my-10 container">
           <h1 className="text-6xl mb-6">Always be aware of events</h1>
           <p className="max-w-3xl">

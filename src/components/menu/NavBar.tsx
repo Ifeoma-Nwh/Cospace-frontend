@@ -26,7 +26,7 @@ export default function NavBar({ classes }: Props) {
 
   return (
     <nav className={`${classes}`}>
-      <ul className="flex gap-x-8 items-center">
+      <ul className="flex justify-between">
         {dropdownMenu.map((menu, key) =>
           menu.name === "Cities" ? (
             <div
@@ -56,7 +56,7 @@ export default function NavBar({ classes }: Props) {
                 {menu.name}
               </Link>
             </li>
-          )
+          ),
         )}
       </ul>
     </nav>

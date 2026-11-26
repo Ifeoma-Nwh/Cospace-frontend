@@ -52,7 +52,7 @@ export default function EditCowork({ coworkId, onBack }: Props) {
 
   const coworkTags = cowork?.coworkTags;
   const tagsWithoutCowork = tags?.filter(
-    (tag) => !coworkTags?.some((coworkTag) => coworkTag.id === tag.id)
+    (tag) => !coworkTags?.some((coworkTag) => coworkTag.id === tag.id),
   );
 
   useEffect(() => {
@@ -92,7 +92,7 @@ export default function EditCowork({ coworkId, onBack }: Props) {
   };
   const handleTagsSelection = (tagId: number, isSelected: boolean) => {
     setSelectedTagsIds((prev) =>
-      isSelected ? [...prev, tagId] : prev.filter((id) => id !== tagId)
+      isSelected ? [...prev, tagId] : prev.filter((id) => id !== tagId),
     );
   };
 
@@ -148,7 +148,7 @@ export default function EditCowork({ coworkId, onBack }: Props) {
             toast?.error(error[0].message);
           }
         },
-      }
+      },
     );
   };
 
@@ -243,7 +243,7 @@ export default function EditCowork({ coworkId, onBack }: Props) {
             inputClass="w-1/2"
             onChange={handleFileChange}
           />
-          <div className="w-1/2 h-80 mb-4 border-2 border-clr-black">
+          <div className="w-1/2 h-80 mb-4 border-2 border-clr-dark">
             {thumbnailUrl && <img src={thumbnailUrl} alt="Preview" />}
           </div>
           <Input

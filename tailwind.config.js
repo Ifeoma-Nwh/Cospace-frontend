@@ -13,8 +13,8 @@ export default {
         text: ["Amiko", "sans-serif"], // 400, 600, 700
       },
       colors: {
-        "clr-black": "var(--text)",
-        "clr-white": "var(--background)",
+        "clr-dark": "var(--text)",
+        "clr-light": "var(--background)",
         "clr-primary": "var(--primary)",
         "clr-secondary": "var(--secondary)",
         "clr-accent": "var(--accent)",

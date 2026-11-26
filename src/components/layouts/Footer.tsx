@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-clr-accent border-t-2">
       <div className="container mx-auto py-8">
         <div className="text-center">
-          <p className="text-clr-white">
+          <p className="text-clr-light">
             &copy; 2023 Your Company. All rights reserved.
           </p>
         </div>

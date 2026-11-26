@@ -20,7 +20,7 @@ export default function TableHead<T extends ICity | ICowork | ITag | IUser>({
   handleSort,
 }: TableHeadProps<T>) {
   return (
-    <thead className="border-b-2 border-clr-black">
+    <thead className="border-b-2 border-clr-dark">
       <tr>
         <th className="min-w-20 pb-4 px-4 text-left text-gray-600">Actions</th>
         {tableHeadData.map((header, index) => (

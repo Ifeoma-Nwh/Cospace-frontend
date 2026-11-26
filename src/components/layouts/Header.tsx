@@ -8,18 +8,18 @@ export default function Header() {
   const authUser = authContext?.state.authUser;
 
   return (
-    <header className=" sticky z-10 top-0 bg-clr-white">
-      <div className="py-4 px-8 flex justify-between">
-        <div className="w-1/2 flex items-center justify-between">
-          <div className="flex bg-clr-black py-2 px-4 rounded-full">
+    <header className="pt-5 sticky z-10 top-0 bg-clr-light">
+      <div className="flex border-2 border-clr-dark">
+        <div className="w-2/3 flex justify-between items-center">
+          <div className="bg-clr-accent px-4 py-2">
             <Link
               to="/"
-              className="font-headline text-2xl uppercase text-clr-white"
+              className="font-headline text-2xl uppercase text-clr-light"
             >
               Co'Space
             </Link>
           </div>
-          <NavBar />
+          <NavBar classes="w-2/3" />
         </div>
         <AuthBar authUser={authUser} />
       </div>

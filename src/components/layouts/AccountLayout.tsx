@@ -3,11 +3,11 @@ import Header from "./Header";
 
 export default function AccountLayout() {
   return (
-    <>
+    <div className="container pt-5">
       <Header />
-      <main className="h-screen pt-32">
+      <main>
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
